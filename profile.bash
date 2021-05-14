@@ -14,8 +14,10 @@ function do_calibrate {
    # -t6500  = color temperature
    # -b100   = brightness cd/m2
    # -g2.2   = gamma
+   # -X      = color correction matrix
    
-   dispcal -v -d1 -qh -t6500 -b100 -g2.2 eizo_CS270_$dt
+   ccm=$base/../color_correction_matrix/i1\ DisplayPro\,\ ColorMunki\ Display\ \&\ Eizo\ CS270\ \(i1\ Pro\).ccmx
+   dispcal -v -d1 -qh -t6500 -b100 -g2.2 -X$ccm eizo_CS270_$dt
 }   
    
 function do_genTargets{   
@@ -58,6 +60,8 @@ function do_icc{
 # Date to be used as part of outputfilename:
 dt=$(date +%Y%m%d_%h%m%s)
 
+#
+base=$(dirname $0)
 
 
 # EOF
