@@ -44,7 +44,7 @@ function do_init {
       echo -n "Enter directory where to save profile (default= ~/Documents): "
       read dir
       if [[ "${dir}" = "" ]];then
-	  dir="~/Documents"
+	      dir="${HOME}/Documents"
       fi
    done
    
@@ -60,10 +60,35 @@ function do_init {
    mkdir -p ${targetdir}    # store all files for this run in this directory
 
    # set default params
-   dispcal_params_default="-v -d1 -qm -t6500 -b100 -g2.2 ${targetdir}/${nm}_${dt}"
+
+   dispcal_params_default="-v2 -d1 -qm -t6500 -b100 -g2.2 -k0 ${targetdir}/${nm}_${dt}"
+   # -v      = verbose
+   # -d1     = display 1
+   # -qm     = quality h=high m=medium
+   # -t6500  = color temperature
+   # -b100   = brightness cd/m2
+   # -g2.2   = gamma
+   # -k0     = for max contrast ratio
+   # -y1     = for LCD white LED IPS
+   # -X<fn>  = color correction matrix
+
    targen_params_default="-v -g16 -d3 ${targetdir}/${nm}_${dt}"
+   # -v     = verbose
+   # -g16   = steps (not sure what that means)
+   # -d3    = video RGB
+
    dispread_params_default="-v -d1 -k ${targetdir}/${nm}_${dt}.cal ${targetdir}/${nm}_${dt}"
+   # -v      = verbose
+   # -d1     = display 1
+   # -H      = use high resolution spectrum mode (if available)
+   # -k <fn> = calibration file; output from calibration step
+
    colprof_params_default="-v -qh -as -nc ${targetdir}/${nm}_${dt}"
+   # -v    = verbose
+   # -qh   = quality high
+   # -as   = algorithm type override ; s =  shaper+matrix
+   # -nc   = don't put the input .ti3 data in the profile
+
    ccmx_default="${base}/color_correction_matrix/i1 DisplayPro, ColorMunki Display & Eizo CS270 (i1 Pro).ccmx"
 }
 
@@ -73,13 +98,6 @@ function do_calibrate {
 #############################################################################
    # Calibrate
    #----------
-   # -v      = verbose
-   # -d1     = display 1
-   # -qm     = quality h=high m=medium
-   # -t6500  = color temperature
-   # -b100   = brightness cd/m2
-   # -g2.2   = gamma
-   # -X      = color correction matrix
    
    #ccmx="${base}/color_correction_matrix/i1 DisplayPro, ColorMunki Display & Eizo CS270 (i1 Pro).ccmx"
    #dispcal -v -d1 -qh -t6500 -b100 -g2.2 -X$ccmx ${nm}_${dt}
@@ -94,9 +112,6 @@ function do_genTargets {
 #############################################################################
    # Generate profiling test targets
    #--------------------------------
-   # -v     = verbose
-   # -g16   = steps (not sure what that means)
-   # -d3    = video RGB
    
    #targen_params_default="-v -g16 -d3 ${targetdir}/${nm}_${dt}"
    echo "RUNNING: targen ${targen_params}"
@@ -108,10 +123,6 @@ function do_profile {
 #############################################################################
    # Profile
    #--------
-   # -v      = verbose
-   # -d1     = display 1
-   # -H      = use high resolution spectrum mode (if available)
-   # -k <fn> = calibration file; output from calibration step
    
    #dispread_params_default="-v -d1 -k ${targetdir}/${nm}_${dt}.cal ${targetdir}/${nm}_${dt}"
    echo "RUNNING: dispread ${dispread_params}"
@@ -123,10 +134,6 @@ function do_icc {
 #############################################################################
    # Generate ICC profile
    #---------------------
-   # -v    = verbose
-   # -qh   = quality high
-   # -as   = algorithm type override ; s =  shaper+matrix
-   # -nc   = don't put the input .ti3 data in the profile
    
    #colprof_params_default="-v -qh -as -nc ${targetdir}/${nm}_${dt}"
    echo "RUNNING: colprof ${colprof_params}"
@@ -145,7 +152,7 @@ function do_menu {
       echo "========"
       echo ""
       if [[ "${targetdir}" != "" ]];then
-	 echo "All files will be stored in ${targetdir}"
+	      echo "All files will be stored in ${targetdir}"
       fi
       echo ""
       echo "0 - Exit"
@@ -162,57 +169,62 @@ function do_menu {
 	    stop="true"
 	    ;;
 	 1)
-            log "----- Initializing ..."
+       log "----- Initializing ..."
 	    do_init
-            log "Initialization finished"
+       log "Initialization finished"
 	    ;;
 	 2)
-            log "----- Starting calibration"
+       log "----- Starting calibration"
 
+       echo "***WARNING*** add parameter -y1 ( y 'one' ) for Lenovo legion laptop !"
 	    edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
 	    dispcal_params=${params}
 
+       echo ""
+       echo "You can check the below URL for a color correction matrix for your 'screen/measuring device' combination:"
+       echo "    https://colorimetercorrections.displaycal.net/"
+       echo "If you do not find one, reply 'none' (without the quotes) to the question below."
 	    edit_params "Provide ccmx file if you have one, enter 'none' otherwise" "${base}/color_correction_matrix/i1 DisplayPro, ColorMunki Display & Eizo CS270 (i1 Pro).ccmx"
 
 	    if [[ "${params}" != "none" ]];then
 	       # check if file exists
 	       if [[ -f "${params}" ]];then
-                  dispcal_params="-X \"${params}\" ${dispcal_params}"
+             dispcal_params="-X \"${params}\" ${dispcal_params}"
 	       else
-		  log "Color correction matrix file deos not exist, ignored."
+	          log "Color correction matrix file deos not exist, ignored."
 	       fi
 	    fi
 
 	    do_calibrate
-            log "output: ${targetdir}/${nm}_${dt}.cal"
-            log "Calibration finished"
+       log "output: ${targetdir}/${nm}_${dt}.cal"
+       log "Calibration finished, .cal created"
 	    ;;
 	 3)
-            log "----- Starting to generate target"
+       log "----- Starting to generate target"
 	    edit_params "Provide parameters for targen" "${targen_params_default}"
 	    targen_params=${params}
 	    do_genTargets
-            log "input : ${targetdir}/${nm}_${dt}.cal"
-            log "output: ${targetdir}/${nm}_${dt}.ti1"
-            log "Target generated"
+       log "input : ${targetdir}/${nm}_${dt}.cal"
+       log "output: ${targetdir}/${nm}_${dt}.ti1"
+       log "Target generated, .ti1 created"
 	    ;;
 	 4)
-            log "----- Starting profiling"
+       log "----- Starting profiling"
 	    edit_params "Provide parameters for dispread" "${dispread_params_default}"
 	    dispread_params=${params}
 	    do_profile
-            log "input : ${targetdir}/${nm}_${dt}.ti1"
-            log "output: ${targetdir}/${nm}_${dt}.ti3"
-            log "Profiling finished"
+       log "input : ${targetdir}/${nm}_${dt}.ti1"
+       log "output: ${targetdir}/${nm}_${dt}.ti3"
+       log "Profiling finished, .ti3 created"
 	    ;;
 	 5)
-            log "----- Starting icc generation"
+       log "----- Starting icc generation"
 	    edit_params "Provide parameters for colprof" "${colprof_params_default}"
 	    colprof_params=${params}
 	    do_icc
-            log "input : ${targetdir}/${nm}_${dt}.ti3"
-            log "output: ${targetdir}/${nm}_${dt}.icc"
-	    log "icc profile created"
+       log "input : ${targetdir}/${nm}_${dt}.ti3"
+       log "output: ${targetdir}/${nm}_${dt}.icc"
+	    log "icc profile created, .icc created"
 	    ;;
 	 *)
 	    echo "***ERROR*** Invalid choice"
@@ -245,7 +257,7 @@ dispcal_params=""
 targen_params=""
 dispread_params=""
 colprof_params=A
-ccmx=""""
+ccmx=""
 
 
 stop="false"

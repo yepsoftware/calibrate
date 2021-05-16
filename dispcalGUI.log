@@ -1,0 +1,1788 @@
+Could not find any typelib for Colord
+Could not find any typelib for Colord
+================================================================================
+dispcalGUI.py 1.0.7.6 2012-06-23T01:18:12.047508Z
+Linux #55-Ubuntu SMP Thu Jun 6 20:18:19 UTC 2013 (Ubuntu 12.10 quantal)
+Python 2.7.3 (default, Sep 26 2012, 21:51:14) 
+[GCC 4.7.2]
+wxPython 2.8.12.1 (gtk2-unicode)
+Starting up...
+Enumerating display devices and communication ports...
+/usr/bin
+Argyll CMS 1.4.0
+...ok.
+Checking video card gamma table access for display 1...
+Verify: 'test.cal' IS loaded (discrepancy 0.0%)
+Dispwin: Error - Failed to get the displays current ICC profile
+...ok.
+Initializing GUI...
+
+...ok.
+Loading calibration curves of current display device profile...
+About to open dispwin object on the display
+About to clear the calibration
+Dispwin: Error - Failed to get the displays current ICC profile
+...failed!
+Ready.
+Check for application update...
+An update is available: 1.2.7.0
+--------------------------------------------------------------------------------
+Measure ambient
+
+Command line:
+  /usr/bin/spotread
+    -v
+    -c1
+    -a
+    -x
+    -yl
+
+
+Connecting to the instrument ..
+Requested ambient light capability,
+and instrument doesn't support it.
+Will use emissive mode instead,
+but note that light level readings may be wrong!
+Init instrument success !
+
+Place instrument on spot to be measured,
+and hit [A-Z] to read white and setup FWA compensation (keyed to letter)
+[a-z] to read and make FWA compensated reading from keyed reference
+'r' to set reference, 's' to save spectrum,
+'h' to toggle high res., 'k' to do a calibration
+Hit ESC or Q to exit, any other key to take a reading:
+...aborted.
+--------------------------------------------------------------------------------
+Calibrate & profile
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-sl61Ak/
+
+Command line:
+  dispcal
+    -v2
+    -d1
+    -c1
+    -yl
+    "-P0.500367917586,0.0766823161189,1.5"
+    -qh
+    -m
+    -t6500.0
+    -b120.0
+    -g2.2
+    -f1.0
+    -k0
+    -A4.0
+    "SyncMaster 2013-06-21 120cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+Setting up the instrument
+
+Place instrument on test window.
+Hit Esc or Q to give up, any other key to continue:
+Display type is 'l'
+Target white = 6500.000000 degrees kelvin Daylight spectrum
+Target white brightness = 120.000000 cd/m^2
+Target black brightness = native brightness
+Target advertised gamma = 2.200000
+Commencing device calibration
+Patch 4 of 6^[
+Sample read stopped at user request!
+Hit Esc or Q to give up, any other key to retry:
+The instrument can be removed from the screen.
+dispcal: Error - display read failed with 'User Aborted'
+
+...aborted.
+Calibration has not been finished.
+--------------------------------------------------------------------------------
+Calibrate & profile
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-gIOiFV/
+
+Command line:
+  dispcal
+    -v2
+    -d1
+    -c1
+    -yl
+    "-P0.500367917586,0.0766823161189,1.5"
+    -qh
+    -t6500.0
+    -b120.0
+    -g2.2
+    -f1.0
+    -k0
+    -A4.0
+    "SyncMaster 2013-06-21 120cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+Setting up the instrument
+Place instrument on test window.
+Hit Esc or Q to give up, any other key to continue:
+Display type is 'l'
+Target white = 6500.000000 degrees kelvin Daylight spectrum
+Target white brightness = 120.000000 cd/m^2
+Target black brightness = native brightness
+Target advertised gamma = 2.200000
+
+Display adjustment menu:
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Doing some initial measurements
+Red   = XYZ  23.97  12.08   0.71
+Green = XYZ  16.11  41.22  11.89
+Blue  = XYZ  11.87   5.26  58.45
+White = XYZ  52.14  57.91  72.05
+
+Adjust R,G & B gain to get target x,y. Press space when done.
+   Target Br 120.00, x 0.3128 , y 0.3291
+/ Current Br 102.44, x 0.3158-, y 0.3317-  DE  1.6  R-  G-  B++
+
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Exiting
+The instrument can be removed from the screen.
+...aborted.
+Calibration has not been finished.
+--------------------------------------------------------------------------------
+Calibrate & profile
+
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-pINHKg/
+
+Command line:
+  dispcal
+    -v2
+    -d1
+    -c1
+    -yl
+    "-P0.500367917586,0.0766823161189,1.5"
+    -qh
+    -t6500.0
+    -b100.0
+    -g2.2
+    -f1.0
+    -k0
+    -A4.0
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+Setting up the instrument
+Place instrument on test window.
+Hit Esc or Q to give up, any other key to continue:
+Display type is 'l'
+Target white = 6500.000000 degrees kelvin Daylight spectrum
+Target white brightness = 100.000000 cd/m^2
+Target black brightness = native brightness
+Target advertised gamma = 2.200000
+
+Display adjustment menu:
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Doing some initial measurements
+Red   = XYZ  52.34  25.52   0.69
+Green = XYZ  27.00  69.37  19.95
+Blue  = XYZ  17.51   7.50  87.10
+White = XYZ  97.62 102.35 109.10
+
+Adjust R,G & B gain to get target x,y. Press space when done.
+   Target Br 100.00, x 0.3128 , y 0.3291
+\ Current Br 102.70, x 0.3166-, y 0.3330-  DE  2.1  R-  G-  B++
+
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Exiting
+The instrument can be removed from the screen.
+...aborted.
+Calibration has not been finished.
+--------------------------------------------------------------------------------
+Calibrate & profile
+
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  dispcal
+    -v2
+    -d1
+    -c1
+    -yl
+    "-P0.500367917586,0.0766823161189,1.5"
+    -qh
+    -t6500.0
+    -b100.0
+    -g2.2
+    -f1.0
+    -k0
+    -A4.0
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+Setting up the instrument
+Place instrument on test window.
+Hit Esc or Q to give up, any other key to continue:
+Display type is 'l'
+Target white = 6500.000000 degrees kelvin Daylight spectrum
+Target white brightness = 100.000000 cd/m^2
+Target black brightness = native brightness
+Target advertised gamma = 2.200000
+
+Display adjustment menu:
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Doing some initial measurements
+Red   = XYZ  50.02  24.46   0.55
+Green = XYZ  24.51  62.77  18.41
+Blue  = XYZ  16.18   6.78  80.67
+White = XYZ  91.60  94.48 100.37
+
+Adjust R,G & B gain to get target x,y. Press space when done.
+   Target Br 100.00, x 0.3128 , y 0.3291
+/ Current Br 98.90, x 0.3131-, y 0.3301-  DE  0.7  R-  G-  B++
+
+Press 1 .. 7
+1) Black level (CRT: Offset/Brightness)
+2) White point (Color temperature, R,G,B, Gain/Contrast)
+3) White level (CRT: Gain/Contrast, LCD: Brightness/Backlight)
+4) Black point (R,G,B, Offset/Brightness)
+5) Check all
+6) Measure and set ambient for viewing condition adjustment
+7) Continue on to calibration
+8) Exit
+Commencing device calibration
+Patch 6 of 6
+Black = XYZ   0.98   1.49   1.13
+Red   = XYZ  49.67  24.32   0.65
+Green = XYZ  26.17  66.92  19.79
+Blue  = XYZ  17.30   7.41  85.92
+White = XYZ  93.64  98.76 106.79
+Patch 80 of 80
+Had to scale brightness from 100.000000 to 97.923422 to fit within gamut,
+corresponding to RGB 0.995337 0.992134 1.000000
+Target white value is XYZ 93.074091 97.923422 106.579054
+Adjusted target black XYZ 0.98 1.49 1.13, Lab 12.77 -14.47 5.62
+Target black after min adjust: XYZ 0.979 1.494 1.134, Lab 12.769 -14.470 5.616
+Gamma curve input offset = 0.000000, output offset = 0.015254, power = 2.282660
+Total Iteration 4, Final Samples = 96 Final Repeat threshold = 0.400000
+Creating initial calibration curves...
+Doing iteration 1 with 12 sample points and repeat threshold of 1.131371 DE
+Patch 1 of 12 point 1 Delta E 1.027583, OK
+Patch 2 of 12 point 2 Delta E 4.261541, Repeat
+Patch 2 of 12 point 2 Delta E 0.916224, OK
+Patch 3 of 12 point 3 Delta E 3.830735, Repeat
+Patch 3 of 12 point 3 Delta E 1.371205, Repeat
+Patch 3 of 12 point 3 Delta E 1.371205, Repeat
+Patch 3 of 12 point 3 Delta E 1.155800, Repeat
+Patch 3 of 12 point 3 Delta E 0.667689, OK
+Patch 4 of 12 point 4 Delta E 3.198175, Repeat
+Patch 4 of 12 point 4 Delta E 1.602502, Repeat
+Patch 4 of 12 point 4 Delta E 1.196775, Repeat
+Patch 4 of 12 point 4 Delta E 0.794090, OK
+Patch 5 of 12 point 5 Delta E 2.974597, Repeat
+Patch 5 of 12 point 5 Delta E 0.539909, OK
+Patch 6 of 12 point 6 Delta E 3.065119, Repeat
+Patch 6 of 12 point 6 Delta E 0.658923, OK
+Patch 7 of 12 point 7 Delta E 2.249974, Repeat
+Patch 7 of 12 point 7 Delta E 1.092144, OK
+Patch 8 of 12 point 8 Delta E 1.649384, Repeat
+Patch 8 of 12 point 8 Delta E 0.092252, OK
+Patch 9 of 12 point 9 Delta E 3.009637, Repeat
+Patch 9 of 12 point 9 Delta E 2.634818, Repeat
+Patch 9 of 12 point 9 Delta E 0.296013, OK
+Patch 10 of 12 point 10 Delta E 2.693019, Repeat
+Patch 10 of 12 point 10 Delta E 1.274988, Repeat
+Patch 10 of 12 point 10 Delta E 1.274988, Repeat
+Patch 10 of 12 point 10 Delta E 1.759971, Repeat
+Patch 10 of 12 point 10 Delta E 0.838204, OK
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12dispcal: inverting Jacobian failed (3) - falling back
+ point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 1.179912, Repeat
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 1.179912, Repeat
+Patch 11 of 12 point 11 Delta E 2.522707, Repeat (got worse)
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 1.299882, Repeat
+Patch 11 of 12 point 11 Delta E 2.522707, Repeat (got worse)
+Patch 11 of 12 point 11 Delta E 1.179912, Fail
+Patch 12 of 12 point 12 Delta E 0.000000, OK
+
+Brightness error = -1.881658 cd/m^2 (is 96.041763, should be 97.923422)
+White point error = 0.709343 deltaE
+Maximum neutral error (@ 0.021566) = 1.179912 deltaE
+Average neutral error = 0.675245 deltaE
+Failed to meet target 1.131371 delta E, got worst case 1.179912
+Number of measurements taken = 53
+Computing update to calibration curves...
+Doing iteration 2 with 24 sample points and repeat threshold of 0.800000 DE
+Patch 1 of 24 point 1 Delta E 1.397697, Repeat
+Patch 1 of 24 point 1 Delta E 0.993194, Repeat
+Patch 1 of 24 point 1 Delta E 0.993194, Repeat
+Patch 1 of 24 point 1 Delta E 0.969424, Repeat
+Patch 1 of 24 point 1 Delta E 0.993194, Repeat
+Patch 1 of 24 point 1 Delta E 0.837203, Repeat
+Patch 1 of 24 point 1 Delta E 0.710186, OK
+Patch 2 of 24 point 2 Delta E 1.075026, Repeat
+Patch 2 of 24 point 2 Delta E 1.054841, Repeat
+Patch 2 of 24 point 2 Delta E 1.636023, Repeat (got worse)
+Patch 2 of 24 point 2 Delta E 0.178532, OK
+Patch 3 of 24 point 3 Delta E 0.784883, OK
+Patch 4 of 24 point 4 Delta E 1.361966, Repeat
+Patch 4 of 24 point 4 Delta E 0.294537, OK
+Patch 5 of 24 point 5 Delta E 0.893704, Repeat
+Patch 5 of 24 point 5 Delta E 0.893704, Repeat
+Patch 5 of 24 point 5 Delta E 0.942432, Repeat
+Patch 5 of 24 point 5 Delta E 1.006469, Repeat
+Patch 5 of 24 point 5 Delta E 1.094189, Repeat
+Patch 5 of 24 point 5 Delta E 1.178603, Repeat
+Patch 5 of 24 point 5 Delta E 1.132595, Repeat
+Patch 5 of 24 point 5 Delta E 0.400743, OK
+Patch 6 of 24 point 6 Delta E 1.590128, Repeat
+Patch 6 of 24 point 6 Delta E 0.480614, OK
+Patch 7 of 24 point 7 Delta E 0.278546, OK
+Patch 8 of 24 point 8 Delta E 2.063817, Repeat
+Patch 8 of 24 point 8 Delta E 0.818968, Repeat
+Patch 8 of 24 point 8 Delta E 0.723298, OK
+Patch 9 of 24 point 9 Delta E 0.676053, OK
+Patch 10 of 24 point 10 Delta E 0.995704, Repeat
+Patch 10 of 24 point 10 Delta E 0.995704, Repeat
+Patch 10 of 24 point 10 Delta E 1.045561, Repeat
+Patch 10 of 24 point 10 Delta E 0.211212, OK
+Patch 11 of 24 point 11 Delta E 0.970245, Repeat
+Patch 11 of 24 point 11 Delta E 0.335388, OK
+Patch 12 of 24 point 12 Delta E 1.299220, Repeat
+Patch 12 of 24 point 12 Delta E 0.344423, OK
+Patch 13 of 24 point 13 Delta E 0.843675, Repeat
+Patch 13 of 24 point 13 Delta E 0.463414, OK
+Patch 14 of 24 point 14 Delta E 1.015449, Repeat
+Patch 14 of 24 point 14 Delta E 0.358147, OK
+Patch 15 of 24 point 15 Delta E 1.805259, Repeat
+Patch 15 of 24 point 15 Delta E 0.477927, OK
+Patch 16 of 24 point 16 Delta E 0.398227, OK
+Patch 17 of 24 point 17 Delta E 0.560436, OK
+Patch 18 of 24 point 18 Delta E 0.152248, OK
+Patch 19 of 24 point 19 Delta E 0.402696, OK
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 1.816121, Repeat (got worse)
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 1.575625, Repeat (got worse)
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 2.133413, Repeat (got worse)
+Patch 20 of 24 point 20 Delta E 2.113219, Repeat (got worse)
+Patch 20 of 24 point 20 Delta E 0.950075, Repeat
+Patch 20 of 24 point 20 Delta E 0.950075, Fail
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.417256, Repeat
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.316293, Repeat
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.565979, Repeat
+Patch 21 of 24 point 21 Delta E 1.565979, Repeat
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.639825, Repeat
+Patch 21 of 24 point 21 Delta E 1.565979, Repeat
+Patch 21 of 24 point 21 Delta E 1.316293, Fail
+Patch 22 of 24 point 22 Delta E 1.212769, Repeat
+Patch 22 of 24dispcal: inverting Jacobian failed (3) - falling back
+ point 22 Delta E 1.196432, Repeat
+Patch 22 of 24 point 22 Delta E 2.066833, Repeat (got worse)
+Patch 22 of 24 point 22 Delta E 113.224589, Repeat (got worse)
+Patch 22 of 24 point 22 Delta E 1.212769, Repeat
+Patch 22 of 24 point 22 Delta E 1.196432, Repeat
+Patch 22 of 24 point 22 Delta E 2.066833, Repeat (got worse)
+Patch 22 of 24 point 22 Delta E 1.196432, Repeat
+Patch 22 of 24 point 22 Delta E 1.212769, Repeat
+Patch 22 of 24 point 22 Delta E 2.606350, Repeat (got worse)
+Patch 22 of 24 point 22 Delta E 1.212769, Repeat
+Patch 22 of 24 point 22 Delta E 1.196432, Fail
+Patch 23 of 24 point 23 Delta E 0.407349, OK
+Patch 24 of 24 point 24 Delta E 0.000000, OK
+
+Brightness error = -1.148565 cd/m^2 (is 96.774857, should be 97.923422)
+White point error = 0.547173 deltaE
+Maximum neutral error (@ 0.038426) = 1.316293 deltaE
+Average neutral error = 0.504236 deltaE
+Failed to meet target 0.800000 delta E, got worst case 1.316293
+Number of measurements taken = 109
+Computing update to calibration curves...
+Doing iteration 3 with 48 sample points and repeat threshold of 0.565685 DE
+Patch 1 of 48 point 1 Delta E 1.789236, Repeat
+Patch 1 of 48 point 1 Delta E 1.343318, Repeat
+Patch 1 of 48 point 1 Delta E 1.121440, Repeat
+Patch 1 of 48 point 1 Delta E 1.786916, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.210327, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.477460, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.363741, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.434304, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.294378, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.299107, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.612329, Repeat (got worse)
+Patch 1 of 48 point 1 Delta E 1.090468, Fail
+Patch 2 of 48 point 2 Delta E 1.279958, Repeat
+Patch 2 of 48 point 2 Delta E 1.279958, Repeat
+Patch 2 of 48 point 2 Delta E 0.555392, OK
+Patch 3 of 48 point 3 Delta E 0.857081, Repeat
+Patch 3 of 48 point 3 Delta E 0.857081, Repeat
+Patch 3 of 48 point 3 Delta E 0.577950, Repeat
+Patch 3 of 48 point 3 Delta E 0.273661, OK
+Patch 4 of 48 point 4 Delta E 1.297193, Repeat
+Patch 4 of 48 point 4 Delta E 1.076964, Repeat
+Patch 4 of 48 point 4 Delta E 0.736479, Repeat
+Patch 4 of 48 point 4 Delta E 0.864397, Repeat (got worse)
+Patch 4 of 48 point 4 Delta E 0.448410, OK
+Patch 5 of 48 point 5 Delta E 2.134106, Repeat
+Patch 5 of 48 point 5 Delta E 2.134106, Repeat
+Patch 5 of 48 point 5 Delta E 1.607561, Repeat
+Patch 5 of 48 point 5 Delta E 1.002489, Repeat
+Patch 5 of 48 point 5 Delta E 0.566580, Repeat
+Patch 5 of 48 point 5 Delta E 0.646645, Repeat (got worse)
+Patch 5 of 48 point 5 Delta E 0.529202, OK
+Patch 6 of 48 point 6 Delta E 0.612093, Repeat
+Patch 6 of 48 point 6 Delta E 0.612093, Repeat
+Patch 6 of 48 point 6 Delta E 0.175128, OK
+Patch 7 of 48 point 7 Delta E 0.956396, Repeat
+Patch 7 of 48 point 7 Delta E 0.956396, Repeat
+Patch 7 of 48 point 7 Delta E 1.260246, Repeat
+Patch 7 of 48 point 7 Delta E 0.530598, OK
+Patch 8 of 48 point 8 Delta E 0.650384, Repeat
+Patch 8 of 48 point 8 Delta E 0.650384, Repeat
+Patch 8 of 48 point 8 Delta E 0.663127, Repeat
+Patch 8 of 48 point 8 Delta E 0.698604, Repeat
+Patch 8 of 48 point 8 Delta E 0.251723, OK
+Patch 9 of 48 point 9 Delta E 1.203709, Repeat
+Patch 9 of 48 point 9 Delta E 0.731676, Repeat
+Patch 9 of 48 point 9 Delta E 0.512462, OK
+Patch 10 of 48 point 10 Delta E 0.937558, Repeat
+Patch 10 of 48 point 10 Delta E 0.730950, Repeat
+Patch 10 of 48 point 10 Delta E 0.730950, Repeat
+Patch 10 of 48 point 10 Delta E 0.851798, Repeat (got worse)
+Patch 10 of 48 point 10 Delta E 0.796075, Repeat (got worse)
+Patch 10 of 48 point 10 Delta E 0.553777, OK
+Patch 11 of 48 point 11 Delta E 0.481791, OK
+Patch 12 of 48 point 12 Delta E 0.900049, Repeat
+Patch 12 of 48 point 12 Delta E 0.788394, Repeat
+Patch 12 of 48 point 12 Delta E 0.965228, Repeat
+Patch 12 of 48 point 12 Delta E 0.382713, OK
+Patch 13 of 48 point 13 Delta E 0.579453, Repeat
+Patch 13 of 48 point 13 Delta E 0.579453, Repeat
+Patch 13 of 48 point 13 Delta E 0.787735, Repeat
+Patch 13 of 48 point 13 Delta E 0.307906, OK
+Patch 14 of 48 point 14 Delta E 0.915182, Repeat
+Patch 14 of 48 point 14 Delta E 0.915182, Repeat
+Patch 14 of 48 point 14 Delta E 1.278959, Repeat
+Patch 14 of 48 point 14 Delta E 1.447117, Repeat
+Patch 14 of 48 point 14 Delta E 1.111055, Repeat
+Patch 14 of 48 point 14 Delta E 2.325044, Repeat
+Patch 14 of 48 point 14 Delta E 0.926628, Repeat
+Patch 14 of 48 point 14 Delta E 0.813119, Repeat
+Patch 14 of 48 point 14 Delta E 0.717192, Repeat
+Patch 14 of 48 point 14 Delta E 0.880361, Repeat
+Patch 14 of 48 point 14 Delta E 1.151430, Repeat
+Patch 14 of 48 point 14 Delta E 0.717192, Fail
+Patch 15 of 48 point 15 Delta E 1.103016, Repeat
+Patch 15 of 48 point 15 Delta E 1.103016, Repeat
+Patch 15 of 48 point 15 Delta E 0.844102, Repeat
+Patch 15 of 48 point 15 Delta E 0.684155, Repeat
+Patch 15 of 48 point 15 Delta E 0.629913, Repeat
+Patch 15 of 48 point 15 Delta E 0.988370, Repeat
+Patch 15 of 48 point 15 Delta E 1.175455, Repeat
+Patch 15 of 48 point 15 Delta E 1.765970, Repeat (got worse)
+Patch 15 of 48 point 15 Delta E 1.878655, Repeat (got worse)
+Patch 15 of 48 point 15 Delta E 0.888223, Repeat (got worse)
+Patch 15 of 48 point 15 Delta E 0.461138, OK
+Patch 16 of 48 point 16 Delta E 1.794548, Repeat
+Patch 16 of 48 point 16 Delta E 0.966769, Repeat
+Patch 16 of 48 point 16 Delta E 0.576036, Repeat
+Patch 16 of 48 point 16 Delta E 0.576036, Repeat
+Patch 16 of 48 point 16 Delta E 0.661878, Repeat
+Patch 16 of 48 point 16 Delta E 0.526273, OK
+Patch 17 of 48 point 17 Delta E 1.204593, Repeat
+Patch 17 of 48 point 17 Delta E 1.204593, Repeat
+Patch 17 of 48 point 17 Delta E 0.464791, OK
+Patch 18 of 48 point 18 Delta E 1.003471, Repeat
+Patch 18 of 48 point 18 Delta E 1.003471, Repeat
+Patch 18 of 48 point 18 Delta E 0.430119, OK
+Patch 19 of 48 point 19 Delta E 0.957672, Repeat
+Patch 19 of 48 point 19 Delta E 0.275353, OK
+Patch 20 of 48 point 20 Delta E 0.971198, Repeat
+Patch 20 of 48 point 20 Delta E 0.682820, Repeat
+Patch 20 of 48 point 20 Delta E 0.682820, Repeat
+Patch 20 of 48 point 20 Delta E 0.481337, OK
+Patch 21 of 48 point 21 Delta E 0.388504, OK
+Patch 22 of 48 point 22 Delta E 0.742055, Repeat
+Patch 22 of 48 point 22 Delta E 0.742055, Repeat
+Patch 22 of 48 point 22 Delta E 0.945126, Repeat
+Patch 22 of 48 point 22 Delta E 0.314894, OK
+Patch 23 of 48 point 23 Delta E 1.358091, Repeat
+Patch 23 of 48 point 23 Delta E 0.301989, OK
+Patch 24 of 48 point 24 Delta E 0.923840, Repeat
+Patch 24 of 48 point 24 Delta E 0.742497, Repeat
+Patch 24 of 48 point 24 Delta E 0.524472, OK
+Patch 25 of 48 point 25 Delta E 1.031528, Repeat
+Patch 25 of 48 point 25 Delta E 0.784172, Repeat
+Patch 25 of 48 point 25 Delta E 0.344251, OK
+Patch 26 of 48 point 26 Delta E 0.860880, Repeat
+Patch 26 of 48 point 26 Delta E 0.791187, Repeat
+Patch 26 of 48 point 26 Delta E 0.323163, OK
+Patch 27 of 48 point 27 Delta E 1.501575, Repeat
+Patch 27 of 48 point 27 Delta E 0.484179, OK
+Patch 28 of 48 point 28 Delta E 0.782287, Repeat
+Patch 28 of 48 point 28 Delta E 0.782287, Repeat
+Patch 28 of 48 point 28 Delta E 0.198401, OK
+Patch 29 of 48 point 29 Delta E 1.208143, Repeat
+Patch 29 of 48 point 29 Delta E 0.817567, Repeat
+Patch 29 of 48 point 29 Delta E 0.779644, Repeat
+Patch 29 of 48 point 29 Delta E 0.817567, Repeat (got worse)
+Patch 29 of 48 point 29 Delta E 0.702130, Repeat
+Patch 29 of 48 point 29 Delta E 0.590928, Repeat
+Patch 29 of 48 point 29 Delta E 0.815491, Repeat
+Patch 29 of 48 point 29 Delta E 0.702130, Repeat
+Patch 29 of 48 point 29 Delta E 0.447328, OK
+Patch 30 of 48 point 30 Delta E 0.600314, Repeat
+Patch 30 of 48 point 30 Delta E 0.325433, OK
+Patch 31 of 48 point 31 Delta E 0.925348, Repeat
+Patch 31 of 48 point 31 Delta E 0.925348, Repeat
+Patch 31 of 48 point 31 Delta E 1.265703, Repeat
+Patch 31 of 48 point 31 Delta E 0.809186, Repeat
+Patch 31 of 48 point 31 Delta E 1.616860, Repeat (got worse)
+Patch 31 of 48 point 31 Delta E 0.197545, OK
+Patch 32 of 48 point 32 Delta E 1.036751, Repeat
+Patch 32 of 48 point 32 Delta E 0.890036, Repeat
+Patch 32 of 48 point 32 Delta E 1.097487, Repeat
+Patch 32 of 48 point 32 Delta E 0.997948, Repeat
+Patch 32 of 48 point 32 Delta E 0.572858, Repeat
+Patch 32 of 48 point 32 Delta E 0.578677, Repeat (got worse)
+Patch 32 of 48 point 32 Delta E 1.036751, Repeat (got worse)
+Patch 32 of 48 point 32 Delta E 1.097487, Repeat
+Patch 32 of 48 point 32 Delta E 0.890036, Repeat (got worse)
+Patch 32 of 48 point 32 Delta E 0.997948, Repeat (got worse)
+Patch 32 of 48 point 32 Delta E 0.572858, Repeat
+Patch 32 of 48 point 32 Delta E 0.572858, Fail
+Patch 33 of 48 point 33 Delta E 0.936306, Repeat
+Patch 33 of 48 point 33 Delta E 0.936306, Repeat
+Patch 33 of 48 point 33 Delta E 1.106058, Repeat
+Patch 33 of 48 point 33 Delta E 1.367119, Repeat
+Patch 33 of 48 point 33 Delta E 1.205337, Repeat
+Patch 33 of 48 point 33 Delta E 0.736077, Repeat
+Patch 33 of 48 point 33 Delta E 0.736077, Repeat
+Patch 33 of 48 point 33 Delta E 0.928108, Repeat (got worse)
+Patch 33 of 48 point 33 Delta E 1.449703, Repeat (got worse)
+Patch 33 of 48 point 33 Delta E 1.106058, Repeat (got worse)
+Patch 33 of 48 point 33 Delta E 1.205337, Repeat (got worse)
+Patch 33 of 48 point 33 Delta E 0.736077, Fail
+Patch 34 of 48 point 34 Delta E 0.824221, Repeat
+Patch 34 of 48 point 34 Delta E 0.824221, Repeat
+Patch 34 of 48 point 34 Delta E 0.500438, OK
+Patch 35 of 48 point 35 Delta E 0.511239, OK
+Patch 36 of 48 point 36 Delta E 2.147643, Repeat
+Patch 36 of 48 point 36 Delta E 2.076214, Repeat
+Patch 36 of 48 point 36 Delta E 2.147643, Repeat (got worse)
+Patch 36 of 48 point 36 Delta E 0.188135, OK
+Patch 37 of 48 point 37 Delta E 0.214747, OK
+Patch 38 of 48 point 38 Delta E 1.959880, Repeat
+Patch 38 of 48 point 38 Delta E 0.516343, OK
+Patch 39 of 48 point 39 Delta E 1.817275, Repeat
+Patch 39 of 48 point 39 Delta E 0.791123, Repeat
+Patch 39 of 48 point 39 Delta E 0.791123, Repeat
+Patch 39 of 48 point 39 Delta E 2.607804, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 0.791123, Repeat
+Patch 39 of 48 point 39 Delta E 1.817275, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 2.607804, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 1.817275, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 1.817275, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 0.791123, Repeat
+Patch 39 of 48 point 39 Delta E 1.461064, Repeat (got worse)
+Patch 39 of 48 point 39 Delta E 0.791123, Fail
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 4.589545, Repeat (got worse)
+Patch 40 of 48 point 40 Delta E 1.734304, Repeat (got worse)
+Patch 40 of 48 point 40 Delta E 2.045162, Repeat (got worse)
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 2.045162, Repeat (got worse)
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 1.734304, Repeat (got worse)
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 1.025879, Repeat
+Patch 40 of 48 point 40 Delta E 1.025879, Fail
+Patch 41 of 48 point 41 Delta E 2.022959, Repeat
+Patch 41 of 48 point 41 Delta E 1.398948, Repeat
+Patch 41 of 48 point 41 Delta E 1.398948, Repeat
+Patch 41 of 48 point 41 Delta E 1.398948, Repeat
+Patch 41 of 48 point 41 Delta E 1.541152, Repeat (got worse)
+Patch 41 of 48 point 41 Delta E 1.398948, Repeat
+Patch 41 of 48 point 41 Delta E 2.022959, Repeat
+Patch 41 of 48 point 41 Delta E 1.576835, Repeat (got worse)
+Patch 41 of 48 point 41 Delta E 1.398948, Repeat
+Patch 41 of 48 point 41 Delta E 1.576835, Repeat (got worse)
+Patch 41 of 48 point 41 Delta E 1.280126, Repeat
+Patch 41 of 48 point 41 Delta E 1.280126, Fail
+Patch 42 of 48 point 42 Delta E 1.502876, Repeat
+Patch 42 of 48 point 42 Delta E 1.502876, Repeat
+Patch 42 of 48 point 42 Delta E 1.375356, Repeat
+Patch 42 of 48 point 42 Delta E 1.700962, Repeat
+Patch 42 of 48 point 42 Delta E 1.700962, Repeat
+Patch 42 of 48 point 42 Delta E 1.502876, Repeat
+Patch 42 of 48 point 42 Delta E 1.502876, Repeat
+Patch 42 of 48 point 42 Delta E 1.700962, Repeat
+Patch 42 of 48 point 42 Delta E 1.375356, Repeat
+Patch 42 of 48 point 42 Delta E 1.700962, Repeat
+Patch 42 of 48 point 42 Delta E 1.502876, Repeat
+Patch 42 of 48 point 42 Delta E 1.375356, Fail
+Patch 43 of 48 point 43 Delta E 1.179670, Repeat
+Patch 43 of 48 point 43 Delta E 1.179670, Repeat
+Patch 43 of 48 point 43 Delta E 2.182326, Repeat (got worse)
+Patch 43 of 48 point 43 Delta E 2.606913, Repeat
+Patch 43 of 48 point 43 Delta E 1.179670, Repeat
+Patch 43 of 48 point 43 Delta E 1.660423, Repeat (got worse)
+Patch 43 of 48 point 43 Delta E 2.182326, Repeat (got worse)
+Patch 43 of 48 point 43 Delta E 1.179670, Repeat
+Patch 43 of 48 point 43 Delta E 2.182326, Repeat (got worse)
+Patch 43 of 48 point 43 Delta E 2.182326, Repeat (got worse)
+Patch 43 of 48 point 43 Delta E 1.075056, Repeat
+Patch 43 of 48 point 43 Delta E 1.075056, Fail
+Patch 44 of 48 point 44 Delta E 1.206061, Repeat
+Patch 44 of 48dispcal: inverting Jacobian failed (3) - falling back
+ point 44 Delta E 1.172712, Repeat
+Patch 44 of 48 point 44 Delta E 1.172712, Repeat
+Patch 44 of 48 point 44 Delta E 2.644945, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 4.319771, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 1.206061, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 2.087806, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 1.206061, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 1.172712, Repeat
+Patch 44 of 48 point 44 Delta E 1.172712, Repeat
+Patch 44 of 48 point 44 Delta E 2.644945, Repeat (got worse)
+Patch 44 of 48 point 44 Delta E 1.172712, Fail
+Patch 45 of 48 point 45 Delta E 0.747003, Repeat
+Patch 45 of 48dispcal: inverting Jacobian failed (3) - falling back
+ point 45 Delta E 0.747003, Repeat
+Patch 45 of 48 point 45 Delta E 0.747003, Repeat
+Patch 45 of 48 point 45 Delta E 1.377419, Repeat (got worse)
+Patch 45 of 48 point 45 Delta E 118.789581, Repeat (got worse)
+Patch 45 of 48 point 45 Delta E 1.377419, Repeat (got worse)
+Patch 45 of 48 point 45 Delta E 0.747003, Repeat
+Patch 45 of 48 point 45 Delta E 0.747003, Repeat
+Patch 45 of 48 point 45 Delta E 2.343908, Repeat (got worse)
+Patch 45 of 48 point 45 Delta E 0.747003, Repeat
+Patch 45 of 48 point 45 Delta E 2.343908, Repeat (got worse)
+Patch 45 of 48 point 45 Delta E 0.747003, Fail
+Patch 46 of 48 point 46 Delta E 0.393698, OK
+Patch 47 of 48 point 47 Delta E 0.130696, OK
+Patch 48 of 48 point 48 Delta E 0.000000, OK
+
+Brightness error = -2.439947 cd/m^2 (is 95.483475, should be 97.923422)
+White point error = 0.499335 deltaE
+Maximum neutral error (@ 0.037127) = 1.375356 deltaE
+Average neutral error = 0.511064 deltaE
+Failed to meet target 0.565685 delta E, got worst case 1.375356
+Number of measurements taken = 364
+Computing update to calibration curves...
+Doing iteration 4 with 96 sample points and repeat threshold of 0.400000 DE
+Patch 1 of 96 point 1 Delta E 2.294915, previous pass DE 2.294915, Repeat
+Patch 1 of 96 point 1 Delta E 2.294915, previous pass DE 2.294915, Repeat
+Patch 1 of 96 point 1 Delta E 2.272518, previous pass DE 2.272518, Repeat
+Patch 1 of 96 point 1 Delta E 2.305401, previous pass DE 2.305401, Repeat (got worse)
+Patch 1 of 96 point 1 Delta E 2.101166, previous pass DE 2.101166, Repeat
+Patch 1 of 96 point 1 Delta E 2.077135, previous pass DE 2.077135, Repeat
+Patch 1 of 96 point 1 Delta E 2.085603, previous pass DE 2.085603, Repeat
+Patch 1 of 96 point 1 Delta E 2.316257, previous pass DE 2.316257, Repeat (got worse)
+Patch 1 of 96 point 1 Delta E 2.246154, previous pass DE 2.246154, Repeat (got worse)
+Patch 1 of 96 point 1 Delta E 2.129216, previous pass DE 2.129216, Repeat (got worse)
+Patch 1 of 96 point 1 Delta E 2.083695, previous pass DE 2.083695, Repeat
+Patch 1 of 96 point 1 Delta E 2.026361, previous pass DE 2.026361, Fail
+Patch 2 of 96 point 2 Delta E 1.428161, previous pass DE 1.510068, Repeat
+Patch 2 of 96 point 2 Delta E 0.907336, previous pass DE 0.571731, Repeat
+Patch 2 of 96 point 2 Delta E 0.732622, previous pass DE 0.535898, Repeat
+Patch 2 of 96 point 2 Delta E 0.858943, previous pass DE 0.543084, Repeat (got worse)
+Patch 2 of 96 point 2 Delta E 0.907336, previous pass DE 0.571731, Repeat (got worse)
+Patch 2 of 96 point 2 Delta E 0.706355, previous pass DE 0.358540, Repeat
+Patch 2 of 96 point 2 Delta E 0.688101, previous pass DE 0.364945, Repeat
+Patch 2 of 96 point 2 Delta E 0.622496, previous pass DE 0.383498, Repeat
+Patch 2 of 96 point 2 Delta E 0.889412, previous pass DE 0.536516, Repeat (got worse)
+Patch 2 of 96 point 2 Delta E 0.809473, previous pass DE 0.531365, Repeat (got worse)
+Patch 2 of 96 point 2 Delta E 0.623679, previous pass DE 0.430925, Repeat (got worse)
+Patch 2 of 96 point 2 Delta E 0.622496, previous pass DE 0.383498, Fail
+Patch 3 of 96 point 3 Delta E 1.177077, previous pass DE 1.284526, Repeat
+Patch 3 of 96 point 3 Delta E 0.292359, previous pass DE 0.564290, Repeat
+Patch 3 of 96 point 3 Delta E 0.157916, previous pass DE 0.514183, Repeat
+Patch 3 of 96 point 3 Delta E 0.157916, previous pass DE 0.514183, Repeat
+Patch 3 of 96 point 3 Delta E 0.523281, previous pass DE 0.723465, Repeat
+Patch 3 of 96 point 3 Delta E 0.752134, previous pass DE 0.514183, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.689017, previous pass DE 0.514183, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.836166, previous pass DE 0.514183, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.556761, previous pass DE 0.834790, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.420442, previous pass DE 0.417361, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.442399, previous pass DE 0.896978, Repeat (got worse)
+Patch 3 of 96 point 3 Delta E 0.157916, previous pass DE 0.514183, Fail
+Patch 4 of 96 point 4 Delta E 1.656658, previous pass DE 1.806239, Repeat
+Patch 4 of 96 point 4 Delta E 1.656658, previous pass DE 1.806239, Repeat
+Patch 4 of 96 point 4 Delta E 0.435753, previous pass DE 0.218869, Repeat
+Patch 4 of 96 point 4 Delta E 0.443753, previous pass DE 0.224566, Repeat
+Patch 4 of 96 point 4 Delta E 0.307714, previous pass DE 0.131709, OK
+Patch 5 of 96 point 5 Delta E 1.083974, previous pass DE 1.127050, Repeat
+Patch 5 of 96 point 5 Delta E 0.344994, previous pass DE 0.589888, Repeat
+Patch 5 of 96 point 5 Delta E 0.344994, previous pass DE 0.589888, Repeat
+Patch 5 of 96 point 5 Delta E 0.569937, previous pass DE 0.794509, Repeat
+Patch 5 of 96 point 5 Delta E 0.888419, previous pass DE 0.854918, Repeat
+Patch 5 of 96 point 5 Delta E 0.621270, previous pass DE 0.524936, Repeat
+Patch 5 of 96 point 5 Delta E 0.703332, previous pass DE 0.864616, Repeat
+Patch 5 of 96 point 5 Delta E 0.660431, previous pass DE 0.893279, Repeat (got worse)
+Patch 5 of 96 point 5 Delta E 0.309025, previous pass DE 0.363203, OK
+Patch 6 of 96 point 6 Delta E 1.137734, previous pass DE 1.246870, Repeat
+Patch 6 of 96 point 6 Delta E 1.103307, previous pass DE 0.887021, Repeat
+Patch 6 of 96 point 6 Delta E 0.797852, previous pass DE 0.979256, Repeat
+Patch 6 of 96 point 6 Delta E 0.446433, previous pass DE 0.231188, Repeat
+Patch 6 of 96 point 6 Delta E 1.103500, previous pass DE 1.306582, Repeat (got worse)
+Patch 6 of 96 point 6 Delta E 0.469118, previous pass DE 0.492204, Repeat (got worse)
+Patch 6 of 96 point 6 Delta E 0.437162, previous pass DE 0.252224, Repeat
+Patch 6 of 96 point 6 Delta E 0.169819, previous pass DE 0.280769, OK
+Patch 7 of 96 point 7 Delta E 1.031858, previous pass DE 1.072398, Repeat
+Patch 7 of 96 point 7 Delta E 0.502289, previous pass DE 0.564872, Repeat
+Patch 7 of 96 point 7 Delta E 0.502289, previous pass DE 0.564872, Repeat
+Patch 7 of 96 point 7 Delta E 0.709614, previous pass DE 0.586988, Repeat
+Patch 7 of 96 point 7 Delta E 0.400592, previous pass DE 0.333527, Repeat
+Patch 7 of 96 point 7 Delta E 0.354243, previous pass DE 0.248319, OK
+Patch 8 of 96 point 8 Delta E 1.916407, previous pass DE 2.082528, Repeat
+Patch 8 of 96 point 8 Delta E 0.666066, previous pass DE 0.555441, Repeat
+Patch 8 of 96 point 8 Delta E 0.280798, previous pass DE 0.237573, OK
+Patch 9 of 96 point 9 Delta E 1.148526, previous pass DE 1.039528, Repeat
+Patch 9 of 96 point 9 Delta E 1.148526, previous pass DE 1.039528, Repeat
+Patch 9 of 96 point 9 Delta E 1.267456, previous pass DE 1.485754, Repeat
+Patch 9 of 96 point 9 Delta E 0.481383, previous pass DE 0.648432, Repeat
+Patch 9 of 96 point 9 Delta E 0.610814, previous pass DE 0.828907, Repeat
+Patch 9 of 96 point 9 Delta E 0.278068, previous pass DE 0.225601, OK
+Patch 10 of 96 point 10 Delta E 0.963813, previous pass DE 0.978758, Repeat
+Patch 10 of 96 point 10 Delta E 0.578393, previous pass DE 0.679760, Repeat
+Patch 10 of 96 point 10 Delta E 0.547378, previous pass DE 0.762905, Repeat
+Patch 10 of 96 point 10 Delta E 0.620010, previous pass DE 0.406648, Repeat
+Patch 10 of 96 point 10 Delta E 0.908535, previous pass DE 1.089458, Repeat (got worse)
+Patch 10 of 96 point 10 Delta E 0.453699, previous pass DE 0.290956, Repeat
+Patch 10 of 96 point 10 Delta E 0.841240, previous pass DE 1.042919, Repeat
+Patch 10 of 96 point 10 Delta E 1.075143, previous pass DE 0.876842, Repeat
+Patch 10 of 96 point 10 Delta E 0.338337, previous pass DE 0.497056, Repeat
+Patch 10 of 96 point 10 Delta E 0.284550, previous pass DE 0.407098, Repeat
+Patch 10 of 96 point 10 Delta E 0.307928, previous pass DE 0.322126, OK
+Patch 11 of 96 point 11 Delta E 1.117374, previous pass DE 1.117396, Repeat
+Patch 11 of 96 point 11 Delta E 0.587764, previous pass DE 0.667946, Repeat
+Patch 11 of 96 point 11 Delta E 0.587764, previous pass DE 0.667946, Repeat
+Patch 11 of 96 point 11 Delta E 0.514769, previous pass DE 0.552233, Repeat
+Patch 11 of 96 point 11 Delta E 0.424343, previous pass DE 0.377164, Repeat
+Patch 11 of 96 point 11 Delta E 0.172092, previous pass DE 0.347215, OK
+Patch 12 of 96 point 12 Delta E 1.082070, previous pass DE 1.107036, Repeat
+Patch 12 of 96 point 12 Delta E 1.000526, previous pass DE 0.949873, Repeat
+Patch 12 of 96 point 12 Delta E 0.776584, previous pass DE 0.739648, Repeat
+Patch 12 of 96 point 12 Delta E 1.284481, previous pass DE 1.321077, Repeat (got worse)
+Patch 12 of 96 point 12 Delta E 0.252551, previous pass DE 0.280055, OK
+Patch 13 of 96 point 13 Delta E 1.081258, previous pass DE 1.114490, Repeat
+Patch 13 of 96 point 13 Delta E 0.802641, previous pass DE 0.796731, Repeat
+Patch 13 of 96 point 13 Delta E 0.617403, previous pass DE 0.606504, Repeat
+Patch 13 of 96 point 13 Delta E 0.220242, previous pass DE 0.242286, OK
+Patch 14 of 96 point 14 Delta E 1.334246, previous pass DE 1.275601, Repeat
+Patch 14 of 96 point 14 Delta E 0.208607, previous pass DE 0.209296, OK
+Patch 15 of 96 point 15 Delta E 1.005989, previous pass DE 1.040818, Repeat
+Patch 15 of 96 point 15 Delta E 0.240992, previous pass DE 0.178853, OK
+Patch 16 of 96 point 16 Delta E 0.773237, previous pass DE 0.774133, Repeat
+Patch 16 of 96 point 16 Delta E 0.604461, previous pass DE 0.734786, Repeat
+Patch 16 of 96 point 16 Delta E 0.223109, previous pass DE 0.272584, OK
+Patch 17 of 96 point 17 Delta E 0.992909, previous pass DE 1.018562, Repeat
+Patch 17 of 96 point 17 Delta E 0.361889, previous pass DE 0.426068, Repeat
+Patch 17 of 96 point 17 Delta E 0.361889, previous pass DE 0.426068, Repeat
+Patch 17 of 96 point 17 Delta E 0.389928, previous pass DE 0.449005, Repeat
+Patch 17 of 96 point 17 Delta E 0.352409, previous pass DE 0.377376, OK
+Patch 18 of 96 point 18 Delta E 2.107225, previous pass DE 2.246013, Repeat
+Patch 18 of 96 point 18 Delta E 0.245280, previous pass DE 0.129831, OK
+Patch 19 of 96 point 19 Delta E 1.414834, previous pass DE 1.563377, Repeat
+Patch 19 of 96 point 19 Delta E 1.316311, previous pass DE 1.243802, Repeat
+Patch 19 of 96 point 19 Delta E 1.378368, previous pass DE 1.473824, Repeat
+Patch 19 of 96 point 19 Delta E 0.687702, previous pass DE 0.845595, Repeat
+Patch 19 of 96 point 19 Delta E 0.744626, previous pass DE 0.923573, Repeat
+Patch 19 of 96 point 19 Delta E 1.036860, previous pass DE 0.868622, Repeat (got worse)
+Patch 19 of 96 point 19 Delta E 0.868665, previous pass DE 0.706496, Repeat
+Patch 19 of 96 point 19 Delta E 0.783651, previous pass DE 0.595327, Repeat
+Patch 19 of 96 point 19 Delta E 1.452587, previous pass DE 1.641824, Repeat
+Patch 19 of 96 point 19 Delta E 0.483012, previous pass DE 0.581391, Repeat
+Patch 19 of 96 point 19 Delta E 0.402479, previous pass DE 0.533789, Repeat
+Patch 19 of 96 point 19 Delta E 0.402479, previous pass DE 0.533789, Fail
+Patch 20 of 96 point 20 Delta E 1.185725, previous pass DE 1.264523, Repeat
+Patch 20 of 96 point 20 Delta E 0.487813, previous pass DE 0.555586, Repeat
+Patch 20 of 96 point 20 Delta E 0.050538, previous pass DE 0.197099, OK
+Patch 21 of 96 point 21 Delta E 0.936820, previous pass DE 0.945849, Repeat
+Patch 21 of 96 point 21 Delta E 0.409509, previous pass DE 0.427367, Repeat
+Patch 21 of 96 point 21 Delta E 0.360688, previous pass DE 0.355868, OK
+Patch 22 of 96 point 22 Delta E 1.643031, previous pass DE 1.810312, Repeat
+Patch 22 of 96 point 22 Delta E 1.643031, previous pass DE 1.810312, Repeat
+Patch 22 of 96 point 22 Delta E 0.572509, previous pass DE 0.564429, Repeat
+Patch 22 of 96 point 22 Delta E 0.675941, previous pass DE 0.490727, Repeat
+Patch 22 of 96 point 22 Delta E 1.004212, previous pass DE 1.189931, Repeat
+Patch 22 of 96 point 22 Delta E 0.655611, previous pass DE 0.485628, Repeat
+Patch 22 of 96 point 22 Delta E 0.587307, previous pass DE 0.648829, Repeat
+Patch 22 of 96 point 22 Delta E 0.611187, previous pass DE 0.765812, Repeat
+Patch 22 of 96 point 22 Delta E 0.494830, previous pass DE 0.323156, Repeat
+Patch 22 of 96 point 22 Delta E 0.378031, previous pass DE 0.562274, Repeat
+Patch 22 of 96 point 22 Delta E 0.706960, previous pass DE 0.561528, Repeat (got worse)
+Patch 22 of 96 point 22 Delta E 0.331111, previous pass DE 0.497799, Fail
+Patch 23 of 96 point 23 Delta E 1.164654, previous pass DE 1.174231, Repeat
+Patch 23 of 96 point 23 Delta E 0.669202, previous pass DE 0.703640, Repeat
+Patch 23 of 96 point 23 Delta E 0.669202, previous pass DE 0.703640, Repeat
+Patch 23 of 96 point 23 Delta E 0.672337, previous pass DE 0.662223, Repeat
+Patch 23 of 96 point 23 Delta E 0.925839, previous pass DE 0.896301, Repeat
+Patch 23 of 96 point 23 Delta E 0.502424, previous pass DE 0.525571, Repeat
+Patch 23 of 96 point 23 Delta E 0.772632, previous pass DE 0.745310, Repeat (got worse)
+Patch 23 of 96 point 23 Delta E 0.376221, previous pass DE 0.381546, OK
+Patch 24 of 96 point 24 Delta E 1.056360, previous pass DE 1.084656, Repeat
+Patch 24 of 96 point 24 Delta E 0.397227, previous pass DE 0.482476, Repeat
+Patch 24 of 96 point 24 Delta E 0.397227, previous pass DE 0.482476, Repeat
+Patch 24 of 96 point 24 Delta E 0.438767, previous pass DE 0.545895, Repeat (got worse)
+Patch 24 of 96 point 24 Delta E 0.452250, previous pass DE 0.563323, Repeat (got worse)
+Patch 24 of 96 point 24 Delta E 0.519648, previous pass DE 0.513875, Repeat (got worse)
+Patch 24 of 96 point 24 Delta E 0.329141, previous pass DE 0.354428, OK
+Patch 25 of 96 point 25 Delta E 0.910683, previous pass DE 0.842747, Repeat
+Patch 25 of 96 point 25 Delta E 0.434339, previous pass DE 0.524918, Repeat
+Patch 25 of 96 point 25 Delta E 0.434339, previous pass DE 0.524918, Repeat
+Patch 25 of 96 point 25 Delta E 0.379198, previous pass DE 0.401832, Repeat
+Patch 25 of 96 point 25 Delta E 0.224221, previous pass DE 0.362630, OK
+Patch 26 of 96 point 26 Delta E 1.038681, previous pass DE 1.014877, Repeat
+Patch 26 of 96 point 26 Delta E 0.450893, previous pass DE 0.503317, Repeat
+Patch 26 of 96 point 26 Delta E 0.464171, previous pass DE 0.418036, Repeat
+Patch 26 of 96 point 26 Delta E 0.640675, previous pass DE 0.673355, Repeat (got worse)
+Patch 26 of 96 point 26 Delta E 0.212574, previous pass DE 0.195494, OK
+Patch 27 of 96 point 27 Delta E 0.971794, previous pass DE 0.953674, Repeat
+Patch 27 of 96 point 27 Delta E 0.654492, previous pass DE 0.606263, Repeat
+Patch 27 of 96 point 27 Delta E 0.654492, previous pass DE 0.606263, Repeat
+Patch 27 of 96 point 27 Delta E 0.370104, previous pass DE 0.453668, Repeat
+Patch 27 of 96 point 27 Delta E 0.347615, previous pass DE 0.381759, OK
+Patch 28 of 96 point 28 Delta E 0.955381, previous pass DE 0.926932, Repeat
+Patch 28 of 96 point 28 Delta E 0.531247, previous pass DE 0.676737, Repeat
+Patch 28 of 96 point 28 Delta E 0.468121, previous pass DE 0.298502, Repeat
+Patch 28 of 96 point 28 Delta E 0.528096, previous pass DE 0.706751, Repeat (got worse)
+Patch 28 of 96 point 28 Delta E 0.193316, previous pass DE 0.149540, OK
+Patch 29 of 96 point 29 Delta E 1.044436, previous pass DE 1.018536, Repeat
+Patch 29 of 96 point 29 Delta E 0.205976, previous pass DE 0.358740, OK
+Patch 30 of 96 point 30 Delta E 1.645500, previous pass DE 1.674581, Repeat
+Patch 30 of 96 point 30 Delta E 0.415031, previous pass DE 0.386610, Repeat
+Patch 30 of 96 point 30 Delta E 0.415031, previous pass DE 0.386610, Repeat
+Patch 30 of 96 point 30 Delta E 1.938548, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 1.771392, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 1.938548, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 2.168357, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 1.771392, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 0.423911, previous pass DE 0.432429, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 1.379401, previous pass DE 0.386610, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 0.851465, previous pass DE 0.851767, Repeat (got worse)
+Patch 30 of 96 point 30 Delta E 0.415031, previous pass DE 0.386610, Fail
+Patch 31 of 96 point 31 Delta E 0.970489, previous pass DE 1.114319, Repeat
+Patch 31 of 96 point 31 Delta E 0.399781, previous pass DE 0.577059, Repeat
+Patch 31 of 96 point 31 Delta E 0.399781, previous pass DE 0.577059, Repeat
+Patch 31 of 96 point 31 Delta E 0.361842, previous pass DE 0.565252, Repeat
+Patch 31 of 96 point 31 Delta E 0.527519, previous pass DE 0.409485, Repeat
+Patch 31 of 96 point 31 Delta E 0.424805, previous pass DE 0.249600, Repeat
+Patch 31 of 96 point 31 Delta E 0.647958, previous pass DE 0.854818, Repeat (got worse)
+Patch 31 of 96 point 31 Delta E 0.885386, previous pass DE 0.738201, Repeat
+Patch 31 of 96 point 31 Delta E 0.753910, previous pass DE 0.913847, Repeat
+Patch 31 of 96 point 31 Delta E 0.348572, previous pass DE 0.415888, Repeat
+Patch 31 of 96 point 31 Delta E 0.490513, previous pass DE 0.284574, Repeat (got worse)
+Patch 31 of 96 point 31 Delta E 0.348572, previous pass DE 0.415888, Fail
+Patch 32 of 96 point 32 Delta E 1.582123, previous pass DE 1.768499, Repeat
+Patch 32 of 96 point 32 Delta E 0.503276, previous pass DE 0.379872, Repeat
+Patch 32 of 96 point 32 Delta E 0.503276, previous pass DE 0.379872, Repeat
+Patch 32 of 96 point 32 Delta E 0.784365, previous pass DE 0.768293, Repeat (got worse)
+Patch 32 of 96 point 32 Delta E 1.277257, previous pass DE 1.072809, Repeat (got worse)
+Patch 32 of 96 point 32 Delta E 0.547019, previous pass DE 0.768159, Repeat
+Patch 32 of 96 point 32 Delta E 0.145331, previous pass DE 0.124057, OK
+Patch 33 of 96 point 33 Delta E 1.050896, previous pass DE 1.184468, Repeat
+Patch 33 of 96 point 33 Delta E 0.756192, previous pass DE 0.922190, Repeat
+Patch 33 of 96 point 33 Delta E 0.202795, previous pass DE 0.161380, OK
+Patch 34 of 96 point 34 Delta E 1.009837, previous pass DE 1.114110, Repeat
+Patch 34 of 96 point 34 Delta E 1.009837, previous pass DE 1.114110, Repeat
+Patch 34 of 96 point 34 Delta E 0.953653, previous pass DE 1.166735, Repeat
+Patch 34 of 96 point 34 Delta E 0.628406, previous pass DE 0.462102, Repeat
+Patch 34 of 96 point 34 Delta E 0.532162, previous pass DE 0.746519, Repeat
+Patch 34 of 96 point 34 Delta E 0.729566, previous pass DE 0.704485, Repeat (got worse)
+Patch 34 of 96 point 34 Delta E 0.539919, previous pass DE 0.747148, Repeat (got worse)
+Patch 34 of 96 point 34 Delta E 0.305038, previous pass DE 0.526567, Repeat
+Patch 34 of 96 point 34 Delta E 0.327169, previous pass DE 0.295380, OK
+Patch 35 of 96 point 35 Delta E 0.986377, previous pass DE 1.175373, Repeat
+Patch 35 of 96 point 35 Delta E 0.957553, previous pass DE 1.129274, Repeat
+Patch 35 of 96 point 35 Delta E 0.848110, previous pass DE 0.674593, Repeat
+Patch 35 of 96 point 35 Delta E 0.615866, previous pass DE 0.631555, Repeat
+Patch 35 of 96 point 35 Delta E 0.791083, previous pass DE 1.032246, Repeat
+Patch 35 of 96 point 35 Delta E 0.409713, previous pass DE 0.205019, Repeat
+Patch 35 of 96 point 35 Delta E 0.585050, previous pass DE 0.768174, Repeat (got worse)
+Patch 35 of 96 point 35 Delta E 0.848110, previous pass DE 0.674593, Repeat (got worse)
+Patch 35 of 96 point 35 Delta E 0.619143, previous pass DE 0.377667, Repeat
+Patch 35 of 96 point 35 Delta E 0.791083, previous pass DE 1.032246, Repeat (got worse)
+Patch 35 of 96 point 35 Delta E 0.297767, previous pass DE 0.462658, Repeat
+Patch 35 of 96 point 35 Delta E 0.297767, previous pass DE 0.462658, Fail
+Patch 36 of 96 point 36 Delta E 0.996201, previous pass DE 1.002973, Repeat
+Patch 36 of 96 point 36 Delta E 0.985368, previous pass DE 1.016277, Repeat
+Patch 36 of 96 point 36 Delta E 1.156371, previous pass DE 1.138324, Repeat (got worse)
+Patch 36 of 96 point 36 Delta E 0.562958, previous pass DE 0.468460, Repeat
+Patch 36 of 96 point 36 Delta E 0.454923, previous pass DE 0.541437, Repeat
+Patch 36 of 96 point 36 Delta E 0.601573, previous pass DE 0.575113, Repeat (got worse)
+Patch 36 of 96 point 36 Delta E 0.705304, previous pass DE 0.822455, Repeat
+Patch 36 of 96 point 36 Delta E 0.361069, previous pass DE 0.307236, OK
+Patch 37 of 96 point 37 Delta E 1.056335, previous pass DE 0.970187, Repeat
+Patch 37 of 96 point 37 Delta E 0.115970, previous pass DE 0.368317, OK
+Patch 38 of 96 point 38 Delta E 0.896651, previous pass DE 1.003454, Repeat
+Patch 38 of 96 point 38 Delta E 0.896651, previous pass DE 1.003454, Repeat
+Patch 38 of 96 point 38 Delta E 1.210420, previous pass DE 1.053216, Repeat
+Patch 38 of 96 point 38 Delta E 0.783732, previous pass DE 0.808325, Repeat
+Patch 38 of 96 point 38 Delta E 0.593465, previous pass DE 0.709687, Repeat
+Patch 38 of 96 point 38 Delta E 0.405801, previous pass DE 0.339804, Repeat
+Patch 38 of 96 point 38 Delta E 0.570868, previous pass DE 0.685397, Repeat (got worse)
+Patch 38 of 96 point 38 Delta E 0.879117, previous pass DE 0.723501, Repeat (got worse)
+Patch 38 of 96 point 38 Delta E 0.688807, previous pass DE 0.849270, Repeat
+Patch 38 of 96 point 38 Delta E 0.380412, previous pass DE 0.361871, OK
+Patch 39 of 96 point 39 Delta E 0.634795, previous pass DE 0.729478, Repeat
+Patch 39 of 96 point 39 Delta E 0.491222, previous pass DE 0.488673, Repeat
+Patch 39 of 96 point 39 Delta E 0.284696, previous pass DE 0.317378, OK
+Patch 40 of 96 point 40 Delta E 1.174722, previous pass DE 1.382023, Repeat
+Patch 40 of 96 point 40 Delta E 0.504917, previous pass DE 0.373840, Repeat
+Patch 40 of 96 point 40 Delta E 0.480989, previous pass DE 0.402016, Repeat
+Patch 40 of 96 point 40 Delta E 0.606305, previous pass DE 0.602197, Repeat
+Patch 40 of 96 point 40 Delta E 1.806250, previous pass DE 0.402016, Repeat (got worse)
+Patch 40 of 96 point 40 Delta E 0.814806, previous pass DE 1.090545, Repeat
+Patch 40 of 96 point 40 Delta E 0.199537, previous pass DE 0.436271, Repeat
+Patch 40 of 96 point 40 Delta E 0.530750, previous pass DE 0.266351, Repeat (got worse)
+Patch 40 of 96 point 40 Delta E 0.514487, previous pass DE 0.756950, Repeat (got worse)
+Patch 40 of 96 point 40 Delta E 0.509288, previous pass DE 0.416414, Repeat (got worse)
+Patch 40 of 96 point 40 Delta E 0.514487, previous pass DE 0.756950, Repeat (got worse)
+Patch 40 of 96 point 40 Delta E 0.199537, previous pass DE 0.436271, Fail
+Patch 41 of 96 point 41 Delta E 1.099762, previous pass DE 1.176705, Repeat
+Patch 41 of 96 point 41 Delta E 0.375082, previous pass DE 0.224220, OK
+Patch 42 of 96 point 42 Delta E 0.878855, previous pass DE 0.714506, Repeat
+Patch 42 of 96 point 42 Delta E 0.878855, previous pass DE 0.714506, Repeat
+Patch 42 of 96 point 42 Delta E 1.388441, previous pass DE 1.698326, Repeat
+Patch 42 of 96 point 42 Delta E 0.552832, previous pass DE 0.875842, Repeat
+Patch 42 of 96 point 42 Delta E 0.561830, previous pass DE 0.834381, Repeat
+Patch 42 of 96 point 42 Delta E 0.030004, previous pass DE 0.314067, OK
+Patch 43 of 96 point 43 Delta E 0.999199, previous pass DE 1.192326, Repeat
+Patch 43 of 96 point 43 Delta E 1.027838, previous pass DE 0.795230, Repeat
+Patch 43 of 96 point 43 Delta E 1.563015, previous pass DE 1.803062, Repeat (got worse)
+Patch 43 of 96 point 43 Delta E 0.155321, previous pass DE 0.360214, OK
+Patch 44 of 96 point 44 Delta E 1.092362, previous pass DE 1.231279, Repeat
+Patch 44 of 96 point 44 Delta E 1.046497, previous pass DE 0.970047, Repeat
+Patch 44 of 96 point 44 Delta E 0.363681, previous pass DE 0.388129, OK
+Patch 45 of 96 point 45 Delta E 0.682353, previous pass DE 0.741574, Repeat
+Patch 45 of 96 point 45 Delta E 0.616025, previous pass DE 0.706600, Repeat
+Patch 45 of 96 point 45 Delta E 1.206683, previous pass DE 0.963939, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 0.907981, previous pass DE 1.150099, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 0.923865, previous pass DE 0.793239, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 0.907981, previous pass DE 1.150099, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 0.863852, previous pass DE 0.964224, Repeat
+Patch 45 of 96 point 45 Delta E 0.907577, previous pass DE 1.127951, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 1.216774, previous pass DE 0.980467, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 1.286278, previous pass DE 1.475680, Repeat
+Patch 45 of 96 point 45 Delta E 1.216774, previous pass DE 0.980467, Repeat (got worse)
+Patch 45 of 96 point 45 Delta E 0.616025, previous pass DE 0.706600, Fail
+Patch 46 of 96 point 46 Delta E 1.185404, previous pass DE 1.297073, Repeat
+Patch 46 of 96 point 46 Delta E 1.185404, previous pass DE 1.297073, Repeat
+Patch 46 of 96 point 46 Delta E 0.938717, previous pass DE 0.842177, Repeat
+Patch 46 of 96 point 46 Delta E 0.488522, previous pass DE 0.772489, Repeat
+Patch 46 of 96 point 46 Delta E 0.435107, previous pass DE 0.484630, Repeat
+Patch 46 of 96 point 46 Delta E 0.492981, previous pass DE 0.186801, Repeat
+Patch 46 of 96 point 46 Delta E 0.488522, previous pass DE 0.772489, Repeat (got worse)
+Patch 46 of 96 point 46 Delta E 0.492981, previous pass DE 0.186801, Repeat
+Patch 46 of 96 point 46 Delta E 0.407589, previous pass DE 0.699768, Repeat (got worse)
+Patch 46 of 96 point 46 Delta E 0.435107, previous pass DE 0.484630, Repeat (got worse)
+Patch 46 of 96 point 46 Delta E 0.492981, previous pass DE 0.186801, Repeat
+Patch 46 of 96 point 46 Delta E 0.492981, previous pass DE 0.186801, Fail
+Patch 47 of 96 point 47 Delta E 1.042138, previous pass DE 1.283295, Repeat
+Patch 47 of 96 point 47 Delta E 0.227087, previous pass DE 0.711377, Repeat
+Patch 47 of 96 point 47 Delta E 0.227087, previous pass DE 0.711377, Repeat
+Patch 47 of 96 point 47 Delta E 0.496325, previous pass DE 0.444900, Repeat
+Patch 47 of 96 point 47 Delta E 0.741625, previous pass DE 0.355487, Repeat (got worse)
+Patch 47 of 96 point 47 Delta E 0.438331, previous pass DE 0.523133, Repeat (got worse)
+Patch 47 of 96 point 47 Delta E 0.275556, previous pass DE 0.738063, Repeat
+Patch 47 of 96 point 47 Delta E 0.741625, previous pass DE 0.355487, Repeat (got worse)
+Patch 47 of 96 point 47 Delta E 0.275556, previous pass DE 0.738063, Repeat
+Patch 47 of 96 point 47 Delta E 0.275556, previous pass DE 0.738063, Repeat
+Patch 47 of 96 point 47 Delta E 0.275556, previous pass DE 0.738063, Repeat
+Patch 47 of 96 point 47 Delta E 0.227087, previous pass DE 0.711377, Fail
+Patch 48 of 96 point 48 Delta E 0.969815, previous pass DE 1.225176, Repeat
+Patch 48 of 96 point 48 Delta E 0.737230, previous pass DE 0.655572, Repeat
+Patch 48 of 96 point 48 Delta E 0.472345, previous pass DE 0.579557, Repeat
+Patch 48 of 96 point 48 Delta E 0.472345, previous pass DE 0.579557, Repeat
+Patch 48 of 96 point 48 Delta E 0.363322, previous pass DE 0.156682, OK
+Patch 49 of 96 point 49 Delta E 0.741645, previous pass DE 1.019025, Repeat
+Patch 49 of 96 point 49 Delta E 0.741645, previous pass DE 1.019025, Repeat
+Patch 49 of 96 point 49 Delta E 0.440918, previous pass DE 0.836730, Repeat
+Patch 49 of 96 point 49 Delta E 0.516429, previous pass DE 0.542252, Repeat
+Patch 49 of 96 point 49 Delta E 0.506124, previous pass DE 0.700023, Repeat (got worse)
+Patch 49 of 96 point 49 Delta E 0.417287, previous pass DE 0.829659, Repeat
+Patch 49 of 96 point 49 Delta E 0.516429, previous pass DE 0.542252, Repeat (got worse)
+Patch 49 of 96 point 49 Delta E 0.381875, previous pass DE 0.607245, Repeat
+Patch 49 of 96 point 49 Delta E 0.530222, previous pass DE 0.175661, Repeat (got worse)
+Patch 49 of 96 point 49 Delta E 0.516429, previous pass DE 0.542252, Repeat (got worse)
+Patch 49 of 96 point 49 Delta E 0.381875, previous pass DE 0.607245, Repeat
+Patch 49 of 96 point 49 Delta E 0.381875, previous pass DE 0.607245, Fail
+Patch 50 of 96 point 50 Delta E 1.008294, previous pass DE 1.109635, Repeat
+Patch 50 of 96 point 50 Delta E 0.672793, previous pass DE 0.897710, Repeat
+Patch 50 of 96 point 50 Delta E 0.622263, previous pass DE 0.942574, Repeat
+Patch 50 of 96 point 50 Delta E 0.672793, previous pass DE 0.897710, Repeat (got worse)
+Patch 50 of 96 point 50 Delta E 1.225302, previous pass DE 0.889172, Repeat (got worse)
+Patch 50 of 96 point 50 Delta E 0.622263, previous pass DE 0.942574, Repeat
+Patch 50 of 96 point 50 Delta E 0.672793, previous pass DE 0.897710, Repeat (got worse)
+Patch 50 of 96 point 50 Delta E 0.622263, previous pass DE 0.942574, Repeat
+Patch 50 of 96 point 50 Delta E 0.794589, previous pass DE 0.471150, Repeat
+Patch 50 of 96 point 50 Delta E 0.672793, previous pass DE 0.897710, Repeat (got worse)
+Patch 50 of 96 point 50 Delta E 1.053162, previous pass DE 1.204364, Repeat (got worse)
+Patch 50 of 96 point 50 Delta E 0.622263, previous pass DE 0.942574, Fail
+Patch 51 of 96 point 51 Delta E 0.711254, previous pass DE 0.843725, Repeat
+Patch 51 of 96 point 51 Delta E 0.569726, previous pass DE 0.712655, Repeat
+Patch 51 of 96 point 51 Delta E 0.569726, previous pass DE 0.712655, Repeat
+Patch 51 of 96 point 51 Delta E 0.504447, previous pass DE 0.459775, Repeat
+Patch 51 of 96 point 51 Delta E 0.389063, previous pass DE 0.227843, OK
+Patch 52 of 96 point 52 Delta E 0.909060, previous pass DE 1.069049, Repeat
+Patch 52 of 96 point 52 Delta E 0.514637, previous pass DE 0.808809, Repeat
+Patch 52 of 96 point 52 Delta E 0.514637, previous pass DE 0.808809, Repeat
+Patch 52 of 96 point 52 Delta E 1.069400, previous pass DE 0.952759, Repeat
+Patch 52 of 96 point 52 Delta E 1.293388, previous pass DE 1.439421, Repeat
+Patch 52 of 96 point 52 Delta E 0.711272, previous pass DE 0.522159, Repeat (got worse)
+Patch 52 of 96 point 52 Delta E 1.345512, previous pass DE 1.666749, Repeat (got worse)
+Patch 52 of 96 point 52 Delta E 0.449147, previous pass DE 0.757181, Repeat
+Patch 52 of 96 point 52 Delta E 0.482851, previous pass DE 0.165600, Repeat
+Patch 52 of 96 point 52 Delta E 0.711272, previous pass DE 0.522159, Repeat (got worse)
+Patch 52 of 96 point 52 Delta E 0.843434, previous pass DE 1.051242, Repeat
+Patch 52 of 96 point 52 Delta E 0.482851, previous pass DE 0.165600, Fail
+Patch 53 of 96 point 53 Delta E 1.309930, previous pass DE 1.735349, Repeat
+Patch 53 of 96 point 53 Delta E 0.633458, previous pass DE 0.170953, Repeat
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Repeat
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Repeat
+Patch 53 of 96 point 53 Delta E 0.633458, previous pass DE 0.170953, Repeat (got worse)
+Patch 53 of 96 point 53 Delta E 0.432514, previous pass DE 0.781929, Repeat (got worse)
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Repeat
+Patch 53 of 96 point 53 Delta E 0.633458, previous pass DE 0.170953, Repeat (got worse)
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Repeat
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Repeat
+Patch 53 of 96 point 53 Delta E 0.807726, previous pass DE 0.468214, Repeat (got worse)
+Patch 53 of 96 point 53 Delta E 0.327162, previous pass DE 0.786630, Fail
+Patch 54 of 96 point 54 Delta E 1.664015, previous pass DE 1.855535, Repeat
+Patch 54 of 96 point 54 Delta E 0.488381, previous pass DE 0.382355, Repeat
+Patch 54 of 96 point 54 Delta E 0.488381, previous pass DE 0.382355, Repeat
+Patch 54 of 96 point 54 Delta E 0.682267, previous pass DE 0.872007, Repeat
+Patch 54 of 96 point 54 Delta E 0.326662, previous pass DE 0.159343, OK
+Patch 55 of 96 point 55 Delta E 1.121874, previous pass DE 1.354200, Repeat
+Patch 55 of 96 point 55 Delta E 0.969271, previous pass DE 1.237510, Repeat
+Patch 55 of 96 point 55 Delta E 0.815711, previous pass DE 0.615944, Repeat
+Patch 55 of 96 point 55 Delta E 1.600053, previous pass DE 1.941802, Repeat (got worse)
+Patch 55 of 96 point 55 Delta E 0.607681, previous pass DE 0.940131, Repeat
+Patch 55 of 96 point 55 Delta E 1.706758, previous pass DE 1.390227, Repeat (got worse)
+Patch 55 of 96 point 55 Delta E 1.600053, previous pass DE 1.941802, Repeat (got worse)
+Patch 55 of 96 point 55 Delta E 0.450169, previous pass DE 0.174580, Repeat
+Patch 55 of 96 point 55 Delta E 0.714758, previous pass DE 0.494612, Repeat
+Patch 55 of 96 point 55 Delta E 1.600053, previous pass DE 0.174580, Repeat (got worse)
+Patch 55 of 96 point 55 Delta E 0.607681, previous pass DE 0.940131, Repeat
+Patch 55 of 96 point 55 Delta E 0.450169, previous pass DE 0.174580, Fail
+Patch 56 of 96 point 56 Delta E 1.536528, previous pass DE 1.983243, Repeat
+Patch 56 of 96 point 56 Delta E 0.932116, previous pass DE 1.306537, Repeat
+Patch 56 of 96 point 56 Delta E 0.911775, previous pass DE 0.568116, Repeat
+Patch 56 of 96 point 56 Delta E 0.925823, previous pass DE 1.305386, Repeat
+Patch 56 of 96 point 56 Delta E 0.738944, previous pass DE 0.432916, Repeat
+Patch 56 of 96 point 56 Delta E 1.555501, previous pass DE 2.033914, Repeat (got worse)
+Patch 56 of 96 point 56 Delta E 0.854521, previous pass DE 0.498705, Repeat
+Patch 56 of 96 point 56 Delta E 0.738944, previous pass DE 0.432916, Repeat
+Patch 56 of 96 point 56 Delta E 0.557800, previous pass DE 1.004074, Repeat
+Patch 56 of 96 point 56 Delta E 0.932116, previous pass DE 1.306537, Repeat
+Patch 56 of 96 point 56 Delta E 0.608394, previous pass DE 0.189884, Repeat
+Patch 56 of 96 point 56 Delta E 0.608394, previous pass DE 0.189884, Fail
+Patch 57 of 96 point 57 Delta E 1.493688, previous pass DE 2.086736, Repeat
+Patch 57 of 96 point 57 Delta E 0.721822, previous pass DE 1.082096, Repeat
+Patch 57 of 96 point 57 Delta E 0.721822, previous pass DE 1.082096, Repeat
+Patch 57 of 96 point 57 Delta E 0.886685, previous pass DE 1.378107, Repeat
+Patch 57 of 96 point 57 Delta E 0.736507, previous pass DE 0.149765, Repeat
+Patch 57 of 96 point 57 Delta E 0.375850, previous pass DE 1.015992, Repeat
+Patch 57 of 96 point 57 Delta E 0.375850, previous pass DE 1.015992, Repeat
+Patch 57 of 96 point 57 Delta E 1.046778, previous pass DE 0.577693, Repeat (got worse)
+Patch 57 of 96 point 57 Delta E 1.473928, previous pass DE 1.015992, Repeat (got worse)
+Patch 57 of 96 point 57 Delta E 0.375850, previous pass DE 1.015992, Repeat
+Patch 57 of 96 point 57 Delta E 1.046778, previous pass DE 0.577693, Repeat (got worse)
+Patch 57 of 96 point 57 Delta E 0.375850, previous pass DE 1.015992, Fail
+Patch 58 of 96 point 58 Delta E 0.914749, previous pass DE 0.947289, Repeat
+Patch 58 of 96 point 58 Delta E 0.914749, previous pass DE 0.947289, Repeat
+Patch 58 of 96 point 58 Delta E 0.874783, previous pass DE 1.129642, Repeat
+Patch 58 of 96 point 58 Delta E 0.874783, previous pass DE 1.129642, Repeat
+Patch 58 of 96 point 58 Delta E 0.917245, previous pass DE 1.107516, Repeat (got worse)
+Patch 58 of 96 point 58 Delta E 0.307199, previous pass DE 0.147653, OK
+Patch 59 of 96 point 59 Delta E 0.889031, previous pass DE 1.254211, Repeat
+Patch 59 of 96 point 59 Delta E 0.798793, previous pass DE 1.186533, Repeat
+Patch 59 of 96 point 59 Delta E 1.623403, previous pass DE 1.247697, Repeat (got worse)
+Patch 59 of 96 point 59 Delta E 0.798793, previous pass DE 1.186533, Repeat
+Patch 59 of 96 point 59 Delta E 0.798793, previous pass DE 1.186533, Repeat
+Patch 59 of 96 point 59 Delta E 0.437534, previous pass DE 0.172498, Repeat
+Patch 59 of 96 point 59 Delta E 0.798793, previous pass DE 1.186533, Repeat (got worse)
+Patch 59 of 96 point 59 Delta E 0.437534, previous pass DE 0.172498, Repeat
+Patch 59 of 96 point 59 Delta E 0.815270, previous pass DE 0.557414, Repeat (got worse)
+Patch 59 of 96 point 59 Delta E 0.798793, previous pass DE 1.186533, Repeat (got worse)
+Patch 59 of 96 point 59 Delta E 0.437534, previous pass DE 0.172498, Repeat
+Patch 59 of 96 point 59 Delta E 0.437534, previous pass DE 0.172498, Fail
+Patch 60 of 96 point 60 Delta E 0.927248, previous pass DE 1.384282, Repeat
+Patch 60 of 96 point 60 Delta E 0.927248, previous pass DE 1.384282, Repeat
+Patch 60 of 96 point 60 Delta E 0.607144, previous pass DE 0.287260, Repeat
+Patch 60 of 96 point 60 Delta E 0.916318, previous pass DE 1.267516, Repeat (got worse)
+Patch 60 of 96 point 60 Delta E 1.175173, previous pass DE 1.629870, Repeat
+Patch 60 of 96 point 60 Delta E 1.175173, previous pass DE 1.629870, Repeat
+Patch 60 of 96 point 60 Delta E 0.841270, previous pass DE 1.219943, Repeat (got worse)
+Patch 60 of 96 point 60 Delta E 0.981846, previous pass DE 0.658511, Repeat (got worse)
+Patch 60 of 96 point 60 Delta E 0.752911, previous pass DE 1.266246, Repeat (got worse)
+Patch 60 of 96 point 60 Delta E 0.607144, previous pass DE 0.287260, Repeat
+Patch 60 of 96 point 60 Delta E 0.863123, previous pass DE 0.847851, Repeat (got worse)
+Patch 60 of 96 point 60 Delta E 0.607144, previous pass DE 0.287260, Fail
+Patch 61 of 96 point 61 Delta E 0.796123, previous pass DE 1.396045, Repeat
+Patch 61 of 96 point 61 Delta E 0.657495, previous pass DE 1.311313, Repeat
+Patch 61 of 96 point 61 Delta E 0.657495, previous pass DE 1.311313, Repeat
+Patch 61 of 96 point 61 Delta E 0.657495, previous pass DE 1.311313, Repeat
+Patch 61 of 96 point 61 Delta E 1.077766, previous pass DE 0.644986, Repeat
+Patch 61 of 96 point 61 Delta E 0.684372, previous pass DE 0.160180, Repeat
+Patch 61 of 96 point 61 Delta E 0.657495, previous pass DE 1.311313, Repeat (got worse)
+Patch 61 of 96 point 61 Delta E 0.684372, previous pass DE 0.160180, Repeat
+Patch 61 of 96 point 61 Delta E 0.684372, previous pass DE 0.160180, Repeat
+Patch 61 of 96 point 61 Delta E 0.657495, previous pass DE 1.311313, Repeat (got worse)
+Patch 61 of 96 point 61 Delta E 0.684372, previous pass DE 0.160180, Repeat
+Patch 61 of 96 point 61 Delta E 0.684372, previous pass DE 0.160180, Fail
+Patch 62 of 96 point 62 Delta E 2.337570, previous pass DE 3.100544, Repeat
+Patch 62 of 96 point 62 Delta E 0.818575, previous pass DE 1.354359, Repeat
+Patch 62 of 96 point 62 Delta E 0.818575, previous pass DE 1.354359, Repeat
+Patch 62 of 96 point 62 Delta E 0.806255, previous pass DE 0.150027, Repeat
+Patch 62 of 96 point 62 Delta E 0.584319, previous pass DE 1.368212, Repeat
+Patch 62 of 96 point 62 Delta E 0.584319, previous pass DE 1.368212, Repeat
+Patch 62 of 96 point 62 Delta E 0.806255, previous pass DE 0.150027, Repeat
+Patch 62 of 96 point 62 Delta E 0.584319, previous pass DE 1.368212, Repeat
+Patch 62 of 96 point 62 Delta E 0.584319, previous pass DE 1.368212, Repeat
+Patch 62 of 96 point 62 Delta E 0.806255, previous pass DE 0.150027, Repeat
+Patch 62 of 96 point 62 Delta E 0.584319, previous pass DE 1.368212, Repeat
+Patch 62 of 96 point 62 Delta E 0.806255, previous pass DE 0.150027, Fail
+Patch 63 of 96 point 63 Delta E 0.649459, previous pass DE 1.503306, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 1.151451, previous pass DE 1.901161, Repeat (got worse)
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 1.352307, previous pass DE 0.695015, Repeat (got worse)
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Repeat
+Patch 63 of 96 point 63 Delta E 0.517501, previous pass DE 1.430995, Fail
+Patch 64 of 96 point 64 Delta E 0.888305, previous pass DE 0.686113, Repeat
+Patch 64 of 96 point 64 Delta E 0.888305, previous pass DE 0.686113, Repeat
+Patch 64 of 96 point 64 Delta E 1.693369, previous pass DE 2.016481, Repeat (got worse)
+Patch 64 of 96 point 64 Delta E 0.888305, previous pass DE 0.686113, Repeat
+Patch 64 of 96 point 64 Delta E 0.292550, previous pass DE 0.194966, OK
+Patch 65 of 96 point 65 Delta E 1.257621, previous pass DE 1.690380, Repeat
+Patch 65 of 96 point 65 Delta E 1.257621, previous pass DE 1.690380, Repeat
+Patch 65 of 96 point 65 Delta E 2.330732, previous pass DE 1.909420, Repeat
+Patch 65 of 96 point 65 Delta E 0.392699, previous pass DE 0.235895, OK
+Patch 66 of 96 point 66 Delta E 1.285017, previous pass DE 1.807207, Repeat
+Patch 66 of 96 point 66 Delta E 1.285017, previous pass DE 1.807207, Repeat
+Patch 66 of 96 point 66 Delta E 0.552593, previous pass DE 0.378851, Repeat
+Patch 66 of 96 point 66 Delta E 1.204555, previous pass DE 1.719466, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 1.204555, previous pass DE 1.719466, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 1.204555, previous pass DE 1.719466, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 2.143066, previous pass DE 0.378851, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 1.285017, previous pass DE 1.807207, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 0.521993, previous pass DE 0.222267, Repeat
+Patch 66 of 96 point 66 Delta E 1.069192, previous pass DE 0.765341, Repeat
+Patch 66 of 96 point 66 Delta E 1.030570, previous pass DE 1.112553, Repeat (got worse)
+Patch 66 of 96 point 66 Delta E 0.521993, previous pass DE 0.222267, Fail
+Patch 67 of 96 point 67 Delta E 1.421510, previous pass DE 2.036002, Repeat
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Repeat
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Repeat
+Patch 67 of 96 point 67 Delta E 1.722902, previous pass DE 0.279048, Repeat (got worse)
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Repeat
+Patch 67 of 96 point 67 Delta E 1.722902, previous pass DE 0.279048, Repeat (got worse)
+Patch 67 of 96 point 67 Delta E 1.722902, previous pass DE 0.279048, Repeat (got worse)
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Repeat
+Patch 67 of 96 point 67 Delta E 1.722902, previous pass DE 0.279048, Repeat (got worse)
+Patch 67 of 96 point 67 Delta E 1.722902, previous pass DE 0.279048, Repeat (got worse)
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Repeat
+Patch 67 of 96 point 67 Delta E 0.570024, previous pass DE 0.279048, Fail
+Patch 68 of 96 point 68 Delta E 1.309978, previous pass DE 2.016038, Repeat
+Patch 68 of 96 point 68 Delta E 1.154839, previous pass DE 1.870203, Repeat
+Patch 68 of 96 point 68 Delta E 2.481000, previous pass DE 1.798842, Repeat (got worse)
+Patch 68 of 96 point 68 Delta E 1.154839, previous pass DE 1.870203, Repeat
+Patch 68 of 96 point 68 Delta E 1.154839, previous pass DE 1.870203, Repeat
+Patch 68 of 96 point 68 Delta E 0.678479, previous pass DE 0.178330, Repeat
+Patch 68 of 96 point 68 Delta E 1.251546, previous pass DE 0.838082, Repeat
+Patch 68 of 96 point 68 Delta E 1.792760, previous pass DE 2.435067, Repeat
+Patch 68 of 96 point 68 Delta E 0.678479, previous pass DE 0.178330, Repeat
+Patch 68 of 96 point 68 Delta E 1.154839, previous pass DE 1.870203, Repeat
+Patch 68 of 96 point 68 Delta E 1.251546, previous pass DE 0.838082, Repeat
+Patch 68 of 96 point 68 Delta E 0.678479, previous pass DE 0.178330, Fail
+Patch 69 of 96 point 69 Delta E 1.259503, previous pass DE 2.078930, Repeat
+Patch 69 of 96 point 69 Delta E 0.805550, previous pass DE 0.468424, Repeat
+Patch 69 of 96 point 69 Delta E 0.805550, previous pass DE 0.468424, Repeat
+Patch 69 of 96 point 69 Delta E 1.136865, previous pass DE 1.947065, Repeat
+Patch 69 of 96 point 69 Delta E 0.805550, previous pass DE 0.468424, Repeat
+Patch 69 of 96 point 69 Delta E 1.136865, previous pass DE 1.947065, Repeat
+Patch 69 of 96 point 69 Delta E 1.330412, previous pass DE 0.821195, Repeat
+Patch 69 of 96 point 69 Delta E 1.794851, previous pass DE 2.530318, Repeat
+Patch 69 of 96 point 69 Delta E 1.330412, previous pass DE 0.821195, Repeat
+Patch 69 of 96 point 69 Delta E 1.136865, previous pass DE 1.947065, Repeat
+Patch 69 of 96 point 69 Delta E 1.252331, previous pass DE 1.294571, Repeat (got worse)
+Patch 69 of 96 point 69 Delta E 0.805550, previous pass DE 0.468424, Fail
+Patch 70 of 96 point 70 Delta E 1.190964, previous pass DE 2.077763, Repeat
+Patch 70 of 96 point 70 Delta E 0.882878, previous pass DE 0.338731, Repeat
+Patch 70 of 96 point 70 Delta E 0.882878, previous pass DE 0.338731, Repeat
+Patch 70 of 96 point 70 Delta E 0.882878, previous pass DE 0.338731, Repeat
+Patch 70 of 96 point 70 Delta E 1.094163, previous pass DE 1.959990, Repeat (got worse)
+Patch 70 of 96 point 70 Delta E 0.882878, previous pass DE 0.338731, Repeat
+Patch 70 of 96 point 70 Delta E 1.094163, previous pass DE 1.959990, Repeat (got worse)
+Patch 70 of 96 point 70 Delta E 1.190964, previous pass DE 2.077763, Repeat (got worse)
+Patch 70 of 96 point 70 Delta E 1.497779, previous pass DE 0.999103, Repeat
+Patch 70 of 96 point 70 Delta E 1.733761, previous pass DE 2.499729, Repeat
+Patch 70 of 96 point 70 Delta E 1.497779, previous pass DE 0.999103, Repeat
+Patch 70 of 96 point 70 Delta E 0.882878, previous pass DE 0.338731, Fail
+Patch 71 of 96 point 71 Delta E 1.181184, previous pass DE 2.161866, Repeat
+Patch 71 of 96 point 71 Delta E 1.181184, previous pass DE 2.161866, Repeat
+Patch 71 of 96 point 71 Delta E 3.575004, previous pass DE 4.533278, Repeat (got worse)
+Patch 71 of 96 point 71 Delta E 3.364376, previous pass DE 2.429544, Repeat (got worse)
+Patch 71 of 96 point 71 Delta E 0.970907, previous pass DE 0.362192, Repeat
+Patch 71 of 96 point 71 Delta E 1.068782, previous pass DE 2.026627, Repeat (got worse)
+Patch 71 of 96 point 71 Delta E 1.595944, previous pass DE 1.030358, Repeat
+Patch 71 of 96 point 71 Delta E 1.752592, previous pass DE 2.594592, Repeat
+Patch 71 of 96 point 71 Delta E 0.970907, previous pass DE 0.362192, Repeat
+Patch 71 of 96 point 71 Delta E 1.068782, previous pass DE 2.026627, Repeat (got worse)
+Patch 71 of 96 point 71 Delta E 0.970907, previous pass DE 0.362192, Repeat
+Patch 71 of 96 point 71 Delta E 0.970907, previous pass DE 0.362192, Fail
+Patch 72 of 96 point 72 Delta E 3.664177, previous pass DE 4.708333, Repeat
+Patch 72 of 96 point 72 Delta E 1.074154, previous pass DE 0.436090, Repeat
+Patch 72 of 96 point 72 Delta E 1.074154, previous pass DE 0.436090, Repeat
+Patch 72 of 96 point 72 Delta E 1.074154, previous pass DE 0.436090, Repeat
+Patch 72 of 96 point 72 Delta E 1.034708, previous pass DE 2.090250, Repeat
+Patch 72 of 96 point 72 Delta E 1.693844, previous pass DE 1.073781, Repeat
+Patch 72 of 96 point 72 Delta E 1.034708, previous pass DE 2.090250, Repeat
+Patch 72 of 96 point 72 Delta E 1.034708, previous pass DE 2.090250, Repeat
+Patch 72 of 96 point 72 Delta E 1.693844, previous pass DE 1.073781, Repeat
+Patch 72 of 96 point 72 Delta E 1.783845, previous pass DE 2.694143, Repeat
+Patch 72 of 96 point 72 Delta E 1.074154, previous pass DE 0.436090, Repeat
+Patch 72 of 96 point 72 Delta E 1.074154, previous pass DE 0.436090, Fail
+Patch 73 of 96 point 73 Delta E 1.253568, previous pass DE 2.380894, Repeat
+Patch 73 of 96 point 73 Delta E 1.000930, previous pass DE 2.156684, Repeat
+Patch 73 of 96 point 73 Delta E 1.000930, previous pass DE 2.156684, Repeat
+Patch 73 of 96 point 73 Delta E 1.517699, previous pass DE 1.329014, Repeat (got worse)
+Patch 73 of 96 point 73 Delta E 1.797980, previous pass DE 1.141375, Repeat
+Patch 73 of 96 point 73 Delta E 1.000930, previous pass DE 2.156684, Repeat
+Patch 73 of 96 point 73 Delta E 1.000930, previous pass DE 2.156684, Repeat
+Patch 73 of 96 point 73 Delta E 1.797980, previous pass DE 1.141375, Repeat
+Patch 73 of 96 point 73 Delta E 1.000930, previous pass DE 2.156684, Repeat
+Patch 73 of 96 point 73 Delta E 1.171767, previous pass DE 0.103620, Repeat
+Patch 73 of 96 point 73 Delta E 1.200026, previous pass DE 0.565754, Repeat
+Patch 73 of 96 point 73 Delta E 1.171767, previous pass DE 0.103620, Fail
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.206115, previous pass DE 0.271814, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.206115, previous pass DE 0.271814, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.206115, previous pass DE 0.271814, Repeat
+Patch 74 of 96 point 74 Delta E 1.045135, previous pass DE 2.346699, Repeat
+Patch 74 of 96 point 74 Delta E 1.417642, previous pass DE 2.294153, Repeat (got worse)
+Patch 74 of 96 point 74 Delta E 1.206115, previous pass DE 0.271814, Fail
+Patch 75 of 96 point 75 Delta E 3.794078, previous pass DE 5.131536, Repeat
+Patch 75 of 96 point 75 Delta E 2.003570, previous pass DE 1.133131, Repeat
+Patch 75 of 96 point 75 Delta E 1.311849, previous pass DE 0.425928, Repeat
+Patch 75 of 96 point 75 Delta E 1.311849, previous pass DE 0.425928, Repeat
+Patch 75 of 96 point 75 Delta E 1.787760, previous pass DE 2.945483, Repeat
+Patch 75 of 96 point 75 Delta E 1.422850, previous pass DE 2.386293, Repeat (got worse)
+Patch 75 of 96 point 75 Delta E 1.311849, previous pass DE 0.425928, Repeat
+Patch 75 of 96 point 75 Delta E 2.003570, previous pass DE 1.133131, Repeat
+Patch 75 of 96 point 75 Delta E 1.311849, previous pass DE 0.425928, Repeat
+Patch 75 of 96 point 75 Delta E 2.003570, previous pass DE 1.133131, Repeat
+Patch 75 of 96 point 75 Delta E 3.248816, previous pass DE 0.425928, Repeat (got worse)
+Patch 75 of 96 point 75 Delta E 1.311849, previous pass DE 0.425928, Fail
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 1.888864, previous pass DE 3.077420, Repeat (got worse)
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 2.108165, previous pass DE 1.247491, Repeat (got worse)
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 1.449090, previous pass DE 0.045039, Repeat
+Patch 76 of 96 point 76 Delta E 2.108165, previous pass DE 1.247491, Repeat
+Patch 76 of 96 point 76 Delta E 0.899727, previous pass DE 2.338232, Repeat
+Patch 76 of 96 point 76 Delta E 1.888864, previous pass DE 3.077420, Repeat
+Patch 76 of 96 point 76 Delta E 1.449090, previous pass DE 0.045039, Fail
+Patch 77 of 96 point 77 Delta E 1.029628, previous pass DE 2.598867, Repeat
+Patch 77 of 96 point 77 Delta E 1.029628, previous pass DE 2.598867, Repeat
+Patch 77 of 96 point 77 Delta E 1.762495, previous pass DE 3.093187, Repeat
+Patch 77 of 96 point 77 Delta E 1.482059, previous pass DE 0.442892, Repeat
+Patch 77 of 96 point 77 Delta E 3.269754, previous pass DE 4.821832, Repeat (got worse)
+Patch 77 of 96 point 77 Delta E 1.482059, previous pass DE 0.442892, Repeat
+Patch 77 of 96 point 77 Delta E 1.029628, previous pass DE 2.598867, Repeat (got worse)
+Patch 77 of 96 point 77 Delta E 0.901119, previous pass DE 2.379222, Repeat
+Patch 77 of 96 point 77 Delta E 2.220859, previous pass DE 1.170358, Repeat
+Patch 77 of 96 point 77 Delta E 1.762495, previous pass DE 3.093187, Repeat
+Patch 77 of 96 point 77 Delta E 1.029628, previous pass DE 2.598867, Repeat (got worse)
+Patch 77 of 96 point 77 Delta E 0.901119, previous pass DE 2.379222, Fail
+Patch 78 of 96 point 78 Delta E 2.294233, previous pass DE 2.836075, Repeat
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Repeat
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Repeat
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Repeat
+Patch 78 of 96 point 78 Delta E 2.707681, previous pass DE 0.401495, Repeat (got worse)
+Patch 78 of 96 point 78 Delta E 1.615450, previous pass DE 0.401495, Repeat (got worse)
+Patch 78 of 96 point 78 Delta E 1.615450, previous pass DE 0.401495, Repeat (got worse)
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Repeat
+Patch 78 of 96 point 78 Delta E 2.707681, previous pass DE 0.401495, Repeat (got worse)
+Patch 78 of 96 point 78 Delta E 1.615450, previous pass DE 0.401495, Repeat (got worse)
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Repeat
+Patch 78 of 96 point 78 Delta E 0.315945, previous pass DE 0.401495, Fail
+Patch 79 of 96 point 79 Delta E 0.464508, previous pass DE 0.561144, Repeat
+Patch 79 of 96 point 79 Delta E 0.464508, previous pass DE 0.561144, Repeat
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 0.464508, previous pass DE 0.561144, Repeat
+Patch 79 of 96 point 79 Delta E 0.659228, previous pass DE 0.339444, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 2.103840, previous pass DE 0.561144, Repeat (got worse)
+Patch 79 of 96 point 79 Delta E 0.464508, previous pass DE 0.561144, Fail
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Repeat
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Repeat
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Repeat
+Patch 80 of 96 point 80 Delta E 2.205872, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Repeat
+Patch 80 of 96 point 80 Delta E 2.493404, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Repeat
+Patch 80 of 96 point 80 Delta E 2.493404, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 2.493404, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 2.493404, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 2.493404, previous pass DE 0.127118, Repeat (got worse)
+Patch 80 of 96 point 80 Delta E 0.544361, previous pass DE 0.127118, Fail
+Patch 81 of 96 point 81 Delta E 2.101832, previous pass DE 2.727669, Repeat
+Patch 81 of 96 point 81 Delta E 1.477088, previous pass DE 1.698368, Repeat
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Repeat
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Repeat
+Patch 81 of 96 point 81 Delta E 2.101832, previous pass DE 0.056772, Repeat (got worse)
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Repeat
+Patch 81 of 96 point 81 Delta E 2.905604, previous pass DE 0.056772, Repeat (got worse)
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Repeat
+Patch 81 of 96 point 81 Delta E 2.101832, previous pass DE 0.056772, Repeat (got worse)
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Repeat
+Patch 81 of 96 point 81 Delta E 1.477088, previous pass DE 1.698368, Repeat (got worse)
+Patch 81 of 96 point 81 Delta E 0.667970, previous pass DE 0.056772, Fail
+Patch 82 of 96 point 82 Delta E 2.765879, previous pass DE 3.558383, Repeat
+Patch 82 of 96 point 82 Delta E 0.830727, previous pass DE 0.212653, Repeat
+Patch 82 of 96 point 82 Delta E 0.830727, previous pass DE 0.212653, Repeat
+Patch 82 of 96 point 82 Delta E 133.868755, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 2.017803, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 1.410283, previous pass DE 1.695498, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 2.017803, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 0.830727, previous pass DE 0.212653, Repeat
+Patch 82 of 96 point 82 Delta E 2.765879, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 2.765879, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 2.765879, previous pass DE 0.212653, Repeat (got worse)
+Patch 82 of 96 point 82 Delta E 0.830727, previous pass DE 0.212653, Fail
+Patch 83 of 96 point 83 Delta E 2.636750, previous pass DE 3.566575, Repeat
+Patch 83 of 96 point 83 Delta E 2.636750, previous pass DE 3.566575, Repeat
+Patch 83 of 96 point 83 Delta E 135.627627, previous pass DE 3.566575, Repeat (got worse)
+Patch 83 of 96 point 83 Delta E 2.237496, previous pass DE 3.109958, Repeat
+Patch 83 of 96 point 83 Delta E 132.787027, previous pass DE 3.109958, Repeat (got worse)
+Patch 83 of 96 point 83 Delta E 132.999085, previous pass DE 3.109958, Repeat (got worse)
+Patch 83 of 96 point 83 Delta E 2.237496, previous pass DE 3.109958, Repeat
+Patch 83 of 96 point 83 Delta E 2.237496, previous pass DE 3.109958, Repeat
+Patch 83 of 96 point 83 Delta E 2.237496, previous pass DE 3.109958, Repeat
+Patch 83 of 96 point 83 Delta E 1.949761, previous pass DE 2.760082, Repeat
+Patch 83 of 96 point 83 Delta E 1.949761, previous pass DE 2.760082, Repeat
+Patch 83 of 96 point 83 Delta E 0.999920, previous pass DE 0.342902, Fail
+Patch 84 of 96 point 84 Delta E 2.516086, previous pass DE 3.576850, Repeat
+Patch 84 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 84 Delta E 2.516086, previous pass DE 3.576850, Repeat
+Patch 84 of 96 point 84 Delta E 2.516086, previous pass DE 3.576850, Repeat
+Patch 84 of 96 point 84 Delta E 1.163356, previous pass DE 0.449987, Repeat
+Patch 84 of 96 point 84 Delta E 85.070962, previous pass DE 0.449987, Repeat (got worse)
+Patch 84 of 96 point 84 Delta E 1.163356, previous pass DE 0.449987, Repeat
+Patch 84 of 96 point 84 Delta E 1.163356, previous pass DE 0.449987, Repeat
+Patch 84 of 96 point 84 Delta E 1.894307, previous pass DE 2.779699, Repeat
+Patch 84 of 96 point 84 Delta E 1.354345, previous pass DE 1.718490, Repeat
+Patch 84 of 96 point 84 Delta E 1.163356, previous pass DE 0.449987, Repeat
+Patch 84 of 96 point 84 Delta E 1.894307, previous pass DE 2.779699, Repeat
+Patch 84 of 96 point 84 Delta E 1.163356, previous pass DE 0.449987, Fail
+Patch 85 of 96 point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96 point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96 point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96 point 85 Delta E 1.354467, previous pass DE 1.734871, Repeat
+Patch 85 of 96 point 85 Delta E 1.848748, previous pass DE 2.798423, Repeat
+Patch 85 of 96 point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96 point 85 Delta E 1.354467, previous pass DE 1.734871, Repeat
+Patch 85 of 96 point 85 Delta E 1.848748, previous pass DE 2.798423, Repeat
+Patch 85 of 96 point 85 Delta E 2.402327, previous pass DE 3.587455, Repeat
+Patch 85 of 96 point 85 Delta E 1.354467, previous pass DE 1.734871, Repeat
+Patch 85 of 96 point 85 Delta E 1.354467, previous pass DE 1.734871, Fail
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.092745, previous pass DE 0.438747, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 3.021983, previous pass DE 3.686770, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.092745, previous pass DE 0.438747, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.852353, previous pass DE 2.784066, Repeat
+Patch 86 of 96 point 86 Delta E 1.092745, previous pass DE 0.438747, Fail
+Patch 87 of 96 point 87 Delta E 1.769870, previous pass DE 2.794952, Repeat
+Patch 87 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 87 Delta E 1.769870, previous pass DE 2.794952, Repeat
+Patch 87 of 96 point 87 Delta E 2.909250, previous pass DE 3.692627, Repeat
+Patch 87 of 96 point 87 Delta E 133.151135, previous pass DE 2.794952, Repeat (got worse)
+Patch 87 of 96 point 87 Delta E 1.769870, previous pass DE 2.794952, Repeat
+Patch 87 of 96 point 87 Delta E 2.909250, previous pass DE 3.692627, Repeat
+Patch 87 of 96 point 87 Delta E 1.189347, previous pass DE 0.491350, Repeat
+Patch 87 of 96 point 87 Delta E 1.009083, previous pass DE 0.669854, Repeat
+Patch 87 of 96 point 87 Delta E 2.048408, previous pass DE 3.061034, Repeat (got worse)
+Patch 87 of 96 point 87 Delta E 1.769870, previous pass DE 2.794952, Repeat (got worse)
+Patch 87 of 96 point 87 Delta E 2.909250, previous pass DE 0.669854, Repeat (got worse)
+Patch 87 of 96 point 87 Delta E 1.009083, previous pass DE 0.669854, Fail
+Patch 88 of 96 point 88 Delta E 2.051791, previous pass DE 3.022506, Repeat
+Patch 88 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 88 Delta E 2.051791, previous pass DE 3.022506, Repeat
+Patch 88 of 96 point 88 Delta E 2.502447, previous pass DE 3.153967, Repeat
+Patch 88 of 96 point 88 Delta E 3.656798, previous pass DE 4.239368, Repeat (got worse)
+Patch 88 of 96 point 88 Delta E 47.425150, previous pass DE 3.022506, Repeat (got worse)
+Patch 88 of 96 point 88 Delta E 2.502447, previous pass DE 3.153967, Repeat
+Patch 88 of 96 point 88 Delta E 1.538703, previous pass DE 2.513258, Repeat
+Patch 88 of 96 point 88 Delta E 1.538703, previous pass DE 2.513258, Repeat
+Patch 88 of 96 point 88 Delta E 2.244805, previous pass DE 3.048769, Repeat (got worse)
+Patch 88 of 96 point 88 Delta E 4.103605, previous pass DE 4.001689, Repeat (got worse)
+Patch 88 of 96 point 88 Delta E 2.244805, previous pass DE 3.048769, Repeat (got worse)
+Patch 88 of 96 point 88 Delta E 1.538703, previous pass DE 2.513258, Fail
+Patch 89 of 96 point 89 Delta E 3.977096, previous pass DE 3.868483, Repeat
+Patch 89 of 96 point 89 Delta E 0.680991, previous pass DE 0.671191, Repeat
+Patch 89 of 96 point 89 Delta E 0.680991, previous pass DE 0.671191, Repeat
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 2.787139, previous pass DE 0.671191, Repeat (got worse)
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 2.787139, previous pass DE 0.671191, Repeat (got worse)
+Patch 89 of 96 point 89 Delta E 1.951978, previous pass DE 1.902926, Repeat
+Patch 89 of 96 point 89 Delta E 0.680991, previous pass DE 0.671191, Fail
+Patch 90 of 96 point 90 Delta E 3.882901, previous pass DE 3.871628, Repeat
+Patch 90 of 96 point 90 Delta E 3.083698, previous pass DE 3.097255, Repeat
+Patch 90 of 96 point 90 Delta E 0.734827, previous pass DE 0.738829, Repeat
+Patch 90 of 96dispcal: inverting Jacobian failed (3) - falling back
+ point 90 Delta E 0.734827, previous pass DE 0.738829, Repeat
+Patch 90 of 96 point 90 Delta E 1.340499, previous pass DE 1.297724, Repeat (got worse)
+Patch 90 of 96 point 90 Delta E 0.734827, previous pass DE 0.738829, Repeat
+Patch 90 of 96 point 90 Delta E 3.882901, previous pass DE 0.738829, Repeat (got worse)
+Patch 90 of 96 point 90 Delta E 0.734827, previous pass DE 0.738829, Repeat
+Patch 90 of 96 point 90 Delta E 3.882901, previous pass DE 0.738829, Repeat (got worse)
+Patch 90 of 96 point 90 Delta E 1.340499, previous pass DE 1.297724, Repeat (got worse)
+Patch 90 of 96 point 90 Delta E 1.878621, previous pass DE 1.908166, Repeat (got worse)
+Patch 90 of 96 point 90 Delta E 0.734827, previous pass DE 0.738829, Fail
+Patch 91 of 96 point 91 Delta E 0.275799, previous pass DE 0.013219, OK
+Patch 92 of 96 point 92 Delta E 0.193641, previous pass DE 0.005853, OK
+Patch 93 of 96 point 93 Delta E 0.122595, previous pass DE 0.002047, OK
+Patch 94 of 96 point 94 Delta E 0.064256, previous pass DE 0.000466, OK
+Patch 95 of 96 point 95 Delta E 2.879549, previous pass DE 2.896516, Repeat
+Patch 95 of 96 point 95 Delta E 0.021240, previous pass DE 0.000037, OK
+Patch 96 of 96 point 96 Delta E 0.000000, previous pass DE 0.000000, OK
+
+Brightness error = -4.485952 cd/m^2 (is 93.437469, should be 97.923422)
+White point error = 0.947073 deltaE
+Maximum neutral error (@ 0.082659) = 2.897130 deltaE
+Average neutral error = 0.770900 deltaE
+Failed to meet target 0.400000 delta E, got worst case 2.026361
+Number of measurements taken = 1036
+The instrument can be removed from the screen.
+Written calibration file 'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.cal'
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  dispread
+    -v
+    -d1
+    -c1
+    -yl
+    "-P0.500367917586,0.0766823161189,1.5"
+    -k
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.cal"
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+Number of patches = 238
+
+Setting up the instrument
+
+Place instrument on test window.
+Hit Esc or Q to give up, any other key to continue:
+Patch 238 of 238
+The instrument can be removed from the screen.
+Written 'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.ti3'
+Create profile from measurement data...
+
+
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  colprof
+    -v
+    -qh
+    -as
+    -C
+    "No copyright. Created with dispcalGUI 1.0.7.6 and Argyll CMS 1.4.0"
+    -M
+    SyncMaster
+    -A
+    "Samsung Electric Company"
+    -D
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX"
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX"
+
+No of test patches = 238
+Creating matrix and curves...
+
+  0%
+  1%
+  2%
+  3%
+  4%
+  5%
+  6%
+  7%
+  8%
+  9%
+ 10%
+ 11%
+ 12%
+ 13%
+ 14%
+ 15%
+ 16%
+ 17%
+ 19%
+ 21%
+ 23%
+ 25%
+ 27%
+ 31%
+ 32%
+ 33%
+ 35%
+ 41%
+ 45%
+ 49%
+ 54%
+ 59%
+ 65%
+ 66%
+ 80%
+ 90%
+ 100%
+Matrix = 0.507063 0.266882 0.166724
+         0.240733 0.688350 0.059225
+         -0.002392 0.205587 0.858890
+Input offset  = -0.027858 -0.040824 -0.043955
+Output offset = 0.001562 0.001019 0.001946
+0 gamma = 2.111918 2.083766 2.010076
+1 harmonics = 0.079435 0.086292 0.170485
+2 harmonics = -0.038855 -0.057999 -0.079950
+3 harmonics = 0.037515 0.028723 0.036471
+4 harmonics = 0.003504 -0.026855 -0.001580
+5 harmonics = -0.008901 0.013668 -0.020325
+6 harmonics = -0.012868 -0.074477 -0.011821
+7 harmonics = -0.008118 0.020876 0.024659
+8 harmonics = -0.029156 0.027556 -0.007867
+9 harmonics = -0.005182 -0.023171 -0.015053
+10 harmonics = 0.022121 -0.017040 0.006908
+11 harmonics = 0.031079 -0.020924 0.016686
+Find white & black points
+Initial white point = 0.940669 0.988308 1.062085
+Initial black point = 0.000869 0.000581 0.001015
+Display Luminance = 90.748352
+White point XYZ = 0.951797 1.000000 1.074649
+Black point XYZ = 0.000879 0.000588 0.001027
+Fixup matrix for white point
+After white point adjust:
+Matrix = 0.541284 0.287032 0.135884
+         0.255611 0.694469 0.049920
+         -0.002867 0.166204 0.661563
+Done gamma/shaper and matrix creation
+Profile done
+Profile check complete, peak err = 5.946693, avg err = 1.358874, RMS = 1.692805
+--------------------------------------------------------------------------------
+Generating gamut views...
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  iccgamut
+    -v
+    -w
+    -ir
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc"
+
+Header:
+  size         = 28268 bytes
+  CMM          = 'argl'
+  Version      = 2.2.0
+  Device Class = Display
+  Color Space  = RGB
+  Conn. Space  = XYZ
+  Date, Time   = 22 Jun 2013, 0:40:59
+  Platform     = *nix
+  Flags        = Not Embedded Profile, Use anywhere
+  Dev. Mnfctr. = 0x0
+  Dev. Model   = 0x0
+  Dev. Attrbts = Reflective, Glossy, Positive, Color
+  Rndrng Intnt = Relative Colorimetric
+  Illuminant   = 0.964203, 1.000000, 0.824905    [Lab 100.000000, 0.000498, -0.000436]
+  Creator      = 'argl'
+
+Total volume of gamut is 1012109.044407 cubic colorspace units
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  viewgam
+    -cw
+    -t.75
+    -s
+    /usr/share/dispcalGUI/ref/sRGB.gam
+    -cn
+    -t.25
+    -s
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.gam"
+    -i
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX vs sRGB.wrl"
+
+Intersecting volume = 763576.8 cubic units
+'/usr/share/dispcalGUI/ref/sRGB.gam' volume = 833675.1 cubic units, intersect = 91.59%
+'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.gam' volume = 1012110.9 cubic units, intersect = 75.44%
+
+Working directory:
+  /
+   tmp/
+    dispcalGUI-28F5xc/
+
+Command line:
+  viewgam
+    -cw
+    -t.75
+    -s
+    /usr/share/dispcalGUI/ref/ClayRGB1998.gam
+    -cn
+    -t.25
+    -s
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.gam"
+    -i
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX vs ClayRGB1998.wrl"
+
+Intersecting volume = 935008.4 cubic units
+'/usr/share/dispcalGUI/ref/ClayRGB1998.gam' volume = 1209985.9 cubic units, intersect = 77.27%
+'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.gam' volume = 1012110.9 cubic units, intersect = 92.38%
+--------------------------------------------------------------------------------
+Loading calibration curves from file...
+/home/pho/.local/share/dispcalGUI/storage/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc
+About to open dispwin object on the display
+About to clear the calibration
+About to set display to given calibration
+Calibration set
+About to destroy dispwin object
+...ok.
+Loading calibration curves from file...
+/home/pho/.local/share/dispcalGUI/storage/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc
+About to open dispwin object on the display
+About to clear the calibration
+About to set display to given calibration
+Calibration set
+About to destroy dispwin object
+...ok.
+--------------------------------------------------------------------------------
+Install profile
+
+Working directory:
+  /
+   home/
+    pho/
+     .local/
+      share/
+       dispcalGUI/
+        storage/
+         SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX/
+
+Command line:
+  dispwin
+    -v
+    -d1
+    -c
+    -I
+    "SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc"
+
+About to open dispwin object on the display
+About to clear the calibration
+About to install 'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc' as display's default profile
+Installed 'SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc' and made it the default
+About to destroy dispwin object
+/usr/bin/gcm-import "/home/pho/.local/share/dispcalGUI/storage/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX/SyncMaster 2013-06-21 100cdm² D6500 2.2 HQ 3xCurve+MTX.icc" &
