@@ -4,15 +4,15 @@
 #############################################################################
 function pressEnter {
 #############################################################################
-	echo ""
-	echo -n "Press enter to continue ..."
-	read X
+   echo ""
+   echo -n "Press enter to continue ..."
+   read X
 }
 
 #############################################################################
 function log {
 #############################################################################
-	echo "$(date +'%Y%m%d %H:%M:%S,%N') $*"
+   echo "$(date +'%Y%m%d %H:%M:%S,%N') $*"
 }
 
 #############################################################################
@@ -20,15 +20,15 @@ function edit_params {
 #############################################################################
 # $1: Tekst
 # $2: Default parameters
-	echo ""
-	echo "$1"
-	echo "Default parameters are:"
-	echo "$2"
-	echo "Your edits or hit enter to accept default:"
-	read params
-	if [[ "${params}" = "" ]];then
-		params=$2
-	fi
+   echo ""
+   echo "$1"
+   echo "Default parameters are:"
+   echo "$2"
+   echo "Your edits or hit enter to accept default:"
+   read params
+   if [[ "${params}" = "" ]];then
+      params=$2
+   fi
 }
 
 #############################################################################
@@ -44,7 +44,7 @@ function do_init {
       echo -n "Enter directory where to save profile (default= ~/Documents): "
       read dir
       if [[ "${dir}" = "" ]];then
-	      dir="${HOME}/Documents"
+         dir="${HOME}/Documents"
       fi
    done
    
@@ -89,7 +89,7 @@ function do_init {
    # -as   = algorithm type override ; s =  shaper+matrix
    # -nc   = don't put the input .ti3 data in the profile
 
-   ccmx_default="${base}/color_correction_matrix/i1 DisplayPro, ColorMunki Display & Eizo CS270 (i1 Pro).ccmx"
+   ccmx_default="${base}/color_correction_matrix/ColorMunki_Display_Eizo_CS270.ccmx"
 }
 
 
@@ -152,7 +152,7 @@ function do_menu {
       echo "========"
       echo ""
       if [[ "${targetdir}" != "" ]];then
-	      echo "All files will be stored in ${targetdir}"
+         echo "All files will be stored in ${targetdir}"
       fi
       echo ""
       echo "0 - Exit"
@@ -165,76 +165,78 @@ function do_menu {
       echo -n "Your choice: "
       read choice
       case $choice in
-	 0)
-	    stop="true"
-	    ;;
-	 1)
-       log "----- Initializing ..."
-	    do_init
-       log "Initialization finished"
-	    ;;
-	 2)
-       log "----- Starting calibration"
+      0)
+         stop="true"
+         ;;
+      1)
+         log "----- Initializing ..."
+         do_init
+         log "Initialization finished"
+         ;;
+      2)
+         log "----- Starting calibration"
+  
+         echo "***WARNING*** add parameter -y1 ( y 'one' ) for Lenovo legion laptop !"
+         edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
+         dispcal_params=${params}
+  
+         echo ""
+         echo "You can check the below URL for a color correction matrix for your 'screen/measuring device' combination:"
+         echo "    https://colorimetercorrections.displaycal.net/"
+         echo "If you do not find one, reply 'none' (without the quotes) to the question below."
+         echo "Note: ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
+         echo "      rename the file first or create a link if needed !!!"
+         
+         edit_params "Provide ccmx file if you have one, enter 'none' otherwise" "$ccmx_default"
 
-       echo "***WARNING*** add parameter -y1 ( y 'one' ) for Lenovo legion laptop !"
-	    edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
-	    dispcal_params=${params}
-
-       echo ""
-       echo "You can check the below URL for a color correction matrix for your 'screen/measuring device' combination:"
-       echo "    https://colorimetercorrections.displaycal.net/"
-       echo "If you do not find one, reply 'none' (without the quotes) to the question below."
-	    edit_params "Provide ccmx file if you have one, enter 'none' otherwise" "${base}/color_correction_matrix/i1 DisplayPro, ColorMunki Display & Eizo CS270 (i1 Pro).ccmx"
-
-	    if [[ "${params}" != "none" ]];then
-	       # check if file exists
-	       if [[ -f "${params}" ]];then
-             dispcal_params="-X \"${params}\" ${dispcal_params}"
-	       else
-	          log "Color correction matrix file deos not exist, ignored."
-	       fi
-	    fi
-
-	    do_calibrate
-       log "output: ${targetdir}/${nm}_${dt}.cal"
-       log "Calibration finished, .cal created"
-	    ;;
-	 3)
-       log "----- Starting to generate target"
-	    edit_params "Provide parameters for targen" "${targen_params_default}"
-	    targen_params=${params}
-	    do_genTargets
-       log "input : ${targetdir}/${nm}_${dt}.cal"
-       log "output: ${targetdir}/${nm}_${dt}.ti1"
-       log "Target generated, .ti1 created"
-	    ;;
-	 4)
-       log "----- Starting profiling"
-	    edit_params "Provide parameters for dispread" "${dispread_params_default}"
-	    dispread_params=${params}
-	    do_profile
-       log "input : ${targetdir}/${nm}_${dt}.ti1"
-       log "output: ${targetdir}/${nm}_${dt}.ti3"
-       log "Profiling finished, .ti3 created"
-	    ;;
-	 5)
-       log "----- Starting icc generation"
-	    edit_params "Provide parameters for colprof" "${colprof_params_default}"
-	    colprof_params=${params}
-	    do_icc
-       log "input : ${targetdir}/${nm}_${dt}.ti3"
-       log "output: ${targetdir}/${nm}_${dt}.icc"
-	    log "icc profile created, .icc created"
-	    ;;
-	 *)
-	    echo "***ERROR*** Invalid choice"
-	    sleep 1
-	    ;;
+         if [[ "${params}" != "none" ]];then
+            # check if file exists
+            if [[ -f ${params} ]] || [[ -h ${params} ]];then
+               dispcal_params="-X ${params} ${dispcal_params}"
+            else
+               log "***WARNING*** Color correction matrix file [${params}] does not exist, ignoring."
+            fi
+         fi
+         do_calibrate
+         log "output: ${targetdir}/${nm}_${dt}.cal"
+         log "Calibration finished, .cal created"
+         ;;
+      3)
+         log "----- Starting to generate target"
+         edit_params "Provide parameters for targen" "${targen_params_default}"
+         targen_params=${params}
+         do_genTargets
+         log "input : ${targetdir}/${nm}_${dt}.cal"
+         log "output: ${targetdir}/${nm}_${dt}.ti1"
+         log "Target generated, .ti1 created"
+         ;;
+      4)
+         log "----- Starting profiling"
+         edit_params "Provide parameters for dispread" "${dispread_params_default}"
+         dispread_params=${params}
+         do_profile
+         log "input : ${targetdir}/${nm}_${dt}.ti1"
+         log "output: ${targetdir}/${nm}_${dt}.ti3"
+         log "Profiling finished, .ti3 created"
+         ;;
+      5)
+         log "----- Starting icc generation"
+         edit_params "Provide parameters for colprof" "${colprof_params_default}"
+         colprof_params=${params}
+         do_icc
+         log "input : ${targetdir}/${nm}_${dt}.ti3"
+         log "output: ${targetdir}/${nm}_${dt}.icc"
+         log "icc profile created, .icc created"
+         ;;
+      *)
+         echo "***ERROR*** Invalid choice"
+         sleep 1
+         ;;
       esac
    done
    return
 }
-	
+   
 
 #############################################################################
 # MAIN
