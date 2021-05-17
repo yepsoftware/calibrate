@@ -44,15 +44,14 @@ function do_init {
    dt=$(date +%Y%m%d_%H%M%S)
 
    # ask for directory where to store the output files
-   while [[ "${dir}" = "" ]];
-   do
-      echo ""
-      echo -n "Enter directory where to save profile (default=${HOME}/Documents): "
-      read dir
-      if [[ "${dir}" = "" ]];then
-         dir="${HOME}/Documents"
-      fi
-   done
+   params=""
+   targetdir_default="/home/pho/Photography/iccProfiles"
+   edit_params "Enter directory where to save profile" ${targetdir_default}
+   if [[ "$params" = "" ]];then
+      targetdir=${targetdir_default}
+   else
+      targetdir=${params}
+   fi
    
    # ask for the name you want to give to the profile
    while [[ "${nm}" = "" ]];
@@ -62,7 +61,7 @@ function do_init {
       read nm
    done
 
-   targetdir=${dir}/${nm}_${dt}
+   targetdir=${targetdir}/${nm}_${dt}
    mkdir -p ${targetdir}    # store all files for this run in this directory
 
    logfn=${targetdir}/profile.log
@@ -204,8 +203,9 @@ function do_menu {
          edit_params "Provide ccmx file if you have one, enter 'none' otherwise" "$ccmx_default"
 
          if [[ "${params}" != "none" ]];then
-            # check if file exists
+            # check if ccmx file exists
             if [[ -f ${params} ]] || [[ -h ${params} ]];then
+               # Update parameters (add -X)
                dispcal_params="-X ${params} ${dispcal_params}"
             else
                log "***WARNING*** Color correction matrix file [${params}] does not exist, ignoring."
@@ -286,6 +286,7 @@ dispread_params=""
 colprof_params=""
 ccmx=""
 
+targetdir_default="" # where all output goes, incl .icc profile
 targetdir="" # where all output goes, incl .icc profile
 logfn="" # full path of the log file
 
