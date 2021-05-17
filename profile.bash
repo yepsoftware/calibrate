@@ -37,39 +37,100 @@ function edit_params {
    fi
 }
 
+
+
+#############################################################################
+function ask {
+# $1: prompt
+# $2: default value to return
+   echo "---"
+   echo "$1"
+   echo "   default: $2"
+   echo -n "> "
+   read params
+   if [[ "${params}" = "" ]];then
+      params=$2
+   fi
+}
+#############################################################################
+
 #############################################################################
 function do_init {
 #############################################################################
    # Date to be used as part of outputfilename:
    dt=$(date +%Y%m%d_%H%M%S)
-
+   
    # ask for directory where to store the output files
    params=""
-   targetdir_default="/home/pho/Photography/iccProfiles"
-   edit_params "Enter directory where to save profile" ${targetdir_default}
-   if [[ "$params" = "" ]];then
-      targetdir=${targetdir_default}
-   else
-      targetdir=${params}
-   fi
+   outdir_default="/home/pho/Photography/iccProfiles"
+   ask "Enter output directory" ${outdir_default}
+   outdir=${params}
    
    # ask for the name you want to give to the profile
    while [[ "${nm}" = "" ]];
    do
       echo ""
-      echo -n "Enter a name for your profile (will be suffixed with dt/tm automatically): "
+      echo "Enter a name for your profile (will be suffixed with dt/tm automatically): "
+      echo -n "> "
       read nm
    done
 
-   targetdir=${targetdir}/${nm}_${dt}
-   mkdir -p ${targetdir}    # store all files for this run in this directory
+   # ask for target color temperature
+   ask "Enter target color temperature (K)" "6500"
+   tct=${params}
 
+   # ask for target brightness
+   ask "Enter target brightness (cd/m2)" "100"
+   tb=${params}
+ 
+   # ask for target gamma
+   ask "Enter desired gamma" "2.2"
+   tgamma=${params}
+
+   # We have enough info now to create directory and start logging
+   targetprefix=${nm}_${dt}_${tct}K_${tb}cdm2_${tgamma}
+   targetdir=${outdir}/${targetprefix}
+   mkdir -p ${targetdir}    # store all files for this run in this directory
    logfn=${targetdir}/profile.log
    touch ${logfn}
 
+   echo "Calibration run of ${dt}" >${logfn}
+
+   # ask for color correction matrix
+   ccmx_default="${base}/color_correction_matrix/ColorMunki_Display_Eizo_CS270.ccmx"
+   ccmx=""
+   echo ""
+   echo "Color Correction Matrix for 'screen/measuring device'."
+   echo ""
+   echo "You can check the below URL for a color correction matrix for your 'screen/measuring device' combination:"
+   echo "    https://colorimetercorrections.displaycal.net/"
+   echo ""
+   echo "If you do not find one or do not want to use one, "
+   echo "   reply 'none' (without the quotes) to the prompt below."
+   echo ""
+   echo "Note: the ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
+   echo "      rename the file first or create a link if needed !!!"
+   echo ""
+   ask "Enter filename (full path) of color correction matrix for you measuring device/screen combination" ${ccmx_default}
+   if [[ "${params}" != "none" ]];then
+      # check if ccmx file exists
+      if [[ -f ${params} ]] || [[ -h ${params} ]];then
+         ccmx=${params}
+      else
+         log "***WARNING*** Color correction matrix file [${params}] does not exist, ignoring."
+      fi
+   fi
+
+   # ask for quality
+   ask "Enter taget quality (l=low, m=medium, h=high)" "m"
+   tq=${params}
+
    # set default params
 
-   dispcal_params_default="-v2 -d1 -qm -t6500 -b100 -g2.2 -k0 ${targetdir}/${nm}_${dt}"
+   dispcal_params_default="-v2 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
+   if [[ "${ccmx}" != "" ]];then
+      dispcal_params_default="-X${ccmx} ${dispcal_params_default}"
+   fi
    # -v      = verbose
    # -d1     = display 1
    # -qm     = quality h=high m=medium
@@ -80,24 +141,29 @@ function do_init {
    # -y1     = for LCD white LED IPS
    # -X<fn>  = color correction matrix
 
-   targen_params_default="-v -g16 -d3 ${targetdir}/${nm}_${dt}"
+   targen_params_default="-v -g16 -d3 ${targetdir}/${targetprefix}"
    # -v     = verbose
    # -g16   = steps (not sure what that means)
    # -d3    = video RGB
 
-   dispread_params_default="-v -d1 -k ${targetdir}/${nm}_${dt}.cal ${targetdir}/${nm}_${dt}"
+   dispread_params_default="-v -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
    # -v      = verbose
    # -d1     = display 1
    # -H      = use high resolution spectrum mode (if available)
    # -k <fn> = calibration file; output from calibration step
 
-   colprof_params_default="-v -qh -as -nc ${targetdir}/${nm}_${dt}"
+   colprof_params_default="-v -q${tq} -as -nc ${targetdir}/${targetprefix}"
    # -v    = verbose
    # -qh   = quality high
    # -as   = algorithm type override ; s =  shaper+matrix
    # -nc   = don't put the input .ti3 data in the profile
 
-   ccmx_default="${base}/color_correction_matrix/ColorMunki_Display_Eizo_CS270.ccmx"
+   log "defaults after initialization:" 
+   log "------------------------------"
+   log "dispcal : ${dispcal_params_default}"
+   log "targen  : ${targen_params_default}"
+   log "dispread: ${dispread_params_default}"
+   log "colprof : ${colprof_params_default}"
 }
 
 #############################################################################
@@ -190,29 +256,8 @@ function do_menu {
          edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
          dispcal_params=${params}
   
-         echo ""
-         echo "You can check the below URL for a color correction matrix for your 'screen/measuring device' combination:"
-         echo "    https://colorimetercorrections.displaycal.net/"
-         echo ""
-         echo "If you do not find one or do not want to use one, "
-         echo "   reply 'none' (without the quotes) to the question below."
-         echo ""
-         echo "Note: the ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
-         echo "      rename the file first or create a link if needed !!!"
-         
-         edit_params "Provide ccmx file if you have one, enter 'none' otherwise" "$ccmx_default"
-
-         if [[ "${params}" != "none" ]];then
-            # check if ccmx file exists
-            if [[ -f ${params} ]] || [[ -h ${params} ]];then
-               # Update parameters (add -X)
-               dispcal_params="-X ${params} ${dispcal_params}"
-            else
-               log "***WARNING*** Color correction matrix file [${params}] does not exist, ignoring."
-            fi
-         fi
          do_calibrate > >(tee -a ${logfn}) 2>&1     # process substitution
-         log "output: ${targetdir}/${nm}_${dt}.cal"
+         log "output: ${targetdir}/${targetprefix}.cal"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
          fi
