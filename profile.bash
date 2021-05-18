@@ -67,6 +67,7 @@ function do_init {
    outdir=${params}
    
    # ask for the name you want to give to the profile
+   nm=""
    while [[ "${nm}" = "" ]];
    do
       echo ""
@@ -86,15 +87,6 @@ function do_init {
    # ask for target gamma
    ask "Enter desired gamma" "2.2"
    tgamma=${params}
-
-   # We have enough info now to create directory and start logging
-   targetprefix=${nm}_${dt}_${tct}K_${tb}cdm2_${tgamma}
-   targetdir=${outdir}/${targetprefix}
-   mkdir -p ${targetdir}    # store all files for this run in this directory
-   logfn=${targetdir}/profile.log
-   touch ${logfn}
-
-   echo "Calibration run of ${dt}" >${logfn}
 
    # ask for color correction matrix
    ccmx_default="${base}/color_correction_matrix/ColorMunki_Display_Eizo_CS270.ccmx"
@@ -121,17 +113,30 @@ function do_init {
       fi
    fi
 
+   # We have enough info now to create directory and start logging
+   targetprefix=${nm}_${dt}_${tct}K_${tb}cdm2_${tgamma}
+   if [[ "${ccmx}" != "" ]];then
+      targetprefix=${targetprefix}_CCMX
+   fi
+   targetdir=${outdir}/${targetprefix}
+   mkdir -p ${targetdir}    # store all files for this run in this directory
+   logfn=${targetdir}/${targetprefix}.log
+   touch ${logfn}
+
+   echo "Calibration run of ${dt}" >>${logfn}
+
    # ask for quality
    ask "Enter taget quality (l=low, m=medium, h=high)" "m"
    tq=${params}
 
    # set default params
 
-   dispcal_params_default="-v2 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
+   dispcal_params_default="-v2 -y1 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
    if [[ "${ccmx}" != "" ]];then
       dispcal_params_default="-X${ccmx} ${dispcal_params_default}"
    fi
-   # -v      = verbose
+   # -v      = verboseA
+   # -y1     = LCD IPS panel
    # -d1     = display 1
    # -qm     = quality h=high m=medium
    # -t6500  = color temperature
@@ -173,8 +178,8 @@ function do_calibrate {
    #----------
 
    #dispcal_params_default="-v -d1 -qh -t6500 -b100 -g2.2 ${nm}_${dt}"
-   echo "RUNNING: dispcal ${dispcal_params}"
-   dispcal ${dispcal_params}
+   log "RUNNING: dispcal ${dispcal_params}"
+   stdbuf -i0 -o0 dispcal ${dispcal_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
 }   
    
@@ -185,8 +190,8 @@ function do_genTargets {
    #--------------------------------
 
    #targen_params_default="-v -g16 -d3 ${targetdir}/${nm}_${dt}"
-   echo "RUNNING: targen ${targen_params}"
-   targen ${targen_params}
+   log "RUNNING: targen ${targen_params}"
+   stdbuf -i0 -o0 targen ${targen_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
 }
 
@@ -197,8 +202,8 @@ function do_profile {
    #--------
 
    #dispread_params_default="-v -d1 -k ${targetdir}/${nm}_${dt}.cal ${targetdir}/${nm}_${dt}"
-   echo "RUNNING: dispread ${dispread_params}"
-   dispread ${dispread_params}
+   log "RUNNING: dispread ${dispread_params}"
+   stdbuf -i0 -o0 dispread ${dispread_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
 }
 
@@ -209,8 +214,8 @@ function do_icc {
    #---------------------
 
    #colprof_params_default="-v -qh -as -nc ${targetdir}/${nm}_${dt}"
-   echo "RUNNING: colprof ${colprof_params}"
-   colprof ${colprof_params}
+   log "RUNNING: colprof ${colprof_params}"
+   stdbuf -i0 -o0 colprof ${colprof_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
 }   
 
@@ -252,11 +257,10 @@ function do_menu {
       2)
          log "----- Start calibration" 
   
-         echo "***WARNING*** add parameter -y1 ( y 'one' ) for Lenovo legion laptop !"
          edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
          dispcal_params=${params}
   
-         do_calibrate > >(tee -a ${logfn}) 2>&1     # process substitution
+         do_calibrate #  > >(tee -a ${logfn}) 2>&1     # process substitution
          log "output: ${targetdir}/${targetprefix}.cal"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
@@ -267,7 +271,7 @@ function do_menu {
          log "----- Start to generate target" 
          edit_params "Provide parameters for targen" "${targen_params_default}"
          targen_params=${params}
-         do_genTargets > >(tee -a ${logfn}) 2>&1     # process substitution
+         do_genTargets # > >(tee -a ${logfn}) 2>&1     # process substitution
          log "input : ${targetdir}/${nm}_${dt}.cal" 
          log "output: ${targetdir}/${nm}_${dt}.ti1"
          if [[ ${last_argyll_rc} -ne 0 ]];then
@@ -279,7 +283,7 @@ function do_menu {
          log "----- Start profiling"
          edit_params "Provide parameters for dispread" "${dispread_params_default}"
          dispread_params=${params}
-         do_profile > >(tee -a ${logfn}) 2>&1     # process substitution
+         do_profile # > >(tee -a ${logfn}) 2>&1     # process substitution
          log "input : ${targetdir}/${nm}_${dt}.ti1"
          log "output: ${targetdir}/${nm}_${dt}.ti3"
          if [[ ${last_argyll_rc} -ne 0 ]];then
@@ -291,7 +295,7 @@ function do_menu {
          log "----- Start icc generation"
          edit_params "Provide parameters for colprof" "${colprof_params_default}"
          colprof_params=${params}
-         do_icc > >(tee -a ${logfn}) 2>&1     # process substitution
+         do_icc  # > >(tee -a ${logfn}) 2>&1     # process substitution
          log "input : ${targetdir}/${nm}_${dt}.ti3"
          log "output: ${targetdir}/${nm}_${dt}.icc"
          if [[ ${last_argyll_rc} -ne 0 ]];then
@@ -311,6 +315,9 @@ function do_menu {
 #############################################################################
 # MAIN
 #############################################################################
+
+# report return status of second last commant in a pipe ( eg dispcal <parms> | tee out )
+set -o pipefail
 
 dt=""
 nm="" # name of profile
