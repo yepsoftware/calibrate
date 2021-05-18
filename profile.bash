@@ -103,7 +103,7 @@ function do_init {
    echo "Note: the ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
    echo "      rename the file first or create a link if needed !!!"
    echo ""
-   ask "Enter filename (full path) of color correction matrix for you measuring device/screen combination" ${ccmx_default}
+   ask "Enter filename of the color correction matrix for you 'measuring device/screen' combination" ${ccmx_default}
    if [[ "${params}" != "none" ]];then
       # check if ccmx file exists
       if [[ -f ${params} ]] || [[ -h ${params} ]];then
@@ -163,12 +163,26 @@ function do_init {
    # -as   = algorithm type override ; s =  shaper+matrix
    # -nc   = don't put the input .ti3 data in the profile
 
+   iccgamut_params_default="-v -w -ir ${targetdir}/${targetprefix}.icc"
+   # -v    = verbose
+   # -w    = emit VRML .wrl file as well as CGATS .gam file
+   # -ir   = intent: p = perceptual, r = relative colorimetric, s = saturation, a = absolute (default), d = profile default
+   
+   viewgam_params_default="-cw -t.75 -s ${base}/ref/sRGB.gam -cn -t.25 -s ${targetdir}/${targetprefix}.gam -i ${targetdir}/${targetprefix}/${targetprefix}_vs_sRGBA"
+   # -cw/n = color of surface (red, green, bue, cyan, magenta, yellow, white, natural color)
+   # -t.x  = transparentie
+   # -s    = solid vs wired frame
+
+   log ""
    log "defaults after initialization:" 
    log "------------------------------"
    log "dispcal : ${dispcal_params_default}"
    log "targen  : ${targen_params_default}"
    log "dispread: ${dispread_params_default}"
    log "colprof : ${colprof_params_default}"
+   log "iccgamut: ${iccgamut_params_default}"
+   log "viewgam : ${viewgam_params_default}"
+   log ""
 }
 
 #############################################################################
@@ -177,7 +191,6 @@ function do_calibrate {
    # Calibrate
    #----------
 
-   #dispcal_params_default="-v -d1 -qh -t6500 -b100 -g2.2 ${nm}_${dt}"
    log "RUNNING: dispcal ${dispcal_params}"
    stdbuf -i0 -o0 dispcal ${dispcal_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
@@ -189,7 +202,6 @@ function do_genTargets {
    # Generate profiling test targets
    #--------------------------------
 
-   #targen_params_default="-v -g16 -d3 ${targetdir}/${nm}_${dt}"
    log "RUNNING: targen ${targen_params}"
    stdbuf -i0 -o0 targen ${targen_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
@@ -201,7 +213,6 @@ function do_profile {
    # Profile
    #--------
 
-   #dispread_params_default="-v -d1 -k ${targetdir}/${nm}_${dt}.cal ${targetdir}/${nm}_${dt}"
    log "RUNNING: dispread ${dispread_params}"
    stdbuf -i0 -o0 dispread ${dispread_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
@@ -213,12 +224,32 @@ function do_icc {
    # Generate ICC profile
    #---------------------
 
-   #colprof_params_default="-v -qh -as -nc ${targetdir}/${nm}_${dt}"
    log "RUNNING: colprof ${colprof_params}"
    stdbuf -i0 -o0 colprof ${colprof_params} 2>&1 | tee -a ${logfn}
    last_argyll_rc=$?
 }   
 
+#############################################################################
+function do_iccgamut {   
+#############################################################################
+   # Generate plot
+   #--------------
+
+   log "RUNNING: iccgamut ${iccgamut_params}"
+   stdbuf -i0 -o0 iccgamut ${iccgamut_params} 2>&1 | tee -a ${logfn}
+   last_argyll_rc=$?
+}   
+
+#############################################################################
+function do_viewgam {   
+#############################################################################
+   # Generate comparative plot
+   #--------------------------
+
+   log "RUNNING: viewgam ${viewgam_params}"
+   stdbuf -i0 -o0 viewgam ${viewgam_params} 2>&1 | tee -a ${logfn}
+   last_argyll_rc=$?
+}   
 #############################################################################
 function do_menu {
 #############################################################################
@@ -229,7 +260,6 @@ function do_menu {
       echo "========"
       echo "= Menu ="
       echo "========"
-      echo ""
       if [[ "${targetdir}" != "" ]];then
          echo "All files will be stored in ${targetdir}"
       fi
@@ -240,13 +270,23 @@ function do_menu {
       echo "3 - Gen targets"
       echo "4 - Profile"
       echo "5 - Create icc"
+      echo "6 - Create gamut plot"
+      echo "7 - Compare with sRGB gamut"
       echo ""
       echo -n "Your choice: "
       read choice
       echo ""
       case $choice in
       0)
-         stop="true"
+         # beautify the logfile before exiting
+         if [[ "${logfn}" != "" ]];then
+            if [[ -f ${logfn} ]];then
+               sed '1,$s//\n/g' ${logfn} > ${logfn}.tmp
+               rm ${logfn}
+               mv ${logfn}.tmp ${logfn}
+            fi
+         fi
+         stop="true"   # exit now
          ;;
       1)
          log "----- Start initializing ..." 
@@ -261,7 +301,7 @@ function do_menu {
          dispcal_params=${params}
   
          do_calibrate #  > >(tee -a ${logfn}) 2>&1     # process substitution
-         log "output: ${targetdir}/${targetprefix}.cal"
+         #log "output: ${targetdir}/${targetprefix}.cal"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
          fi
@@ -272,8 +312,8 @@ function do_menu {
          edit_params "Provide parameters for targen" "${targen_params_default}"
          targen_params=${params}
          do_genTargets # > >(tee -a ${logfn}) 2>&1     # process substitution
-         log "input : ${targetdir}/${nm}_${dt}.cal" 
-         log "output: ${targetdir}/${nm}_${dt}.ti1"
+         #log "input : ${targetdir}/${targetprefix}.cal" 
+         #log "output: ${targetdir}/${targetprefix}.ti1"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
          fi
@@ -284,8 +324,8 @@ function do_menu {
          edit_params "Provide parameters for dispread" "${dispread_params_default}"
          dispread_params=${params}
          do_profile # > >(tee -a ${logfn}) 2>&1     # process substitution
-         log "input : ${targetdir}/${nm}_${dt}.ti1"
-         log "output: ${targetdir}/${nm}_${dt}.ti3"
+         #log "input : ${targetdir}/${targetprefix}.ti1"
+         #log "output: ${targetdir}/${targetprefix}.ti3"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
          fi
@@ -296,8 +336,34 @@ function do_menu {
          edit_params "Provide parameters for colprof" "${colprof_params_default}"
          colprof_params=${params}
          do_icc  # > >(tee -a ${logfn}) 2>&1     # process substitution
-         log "input : ${targetdir}/${nm}_${dt}.ti3"
-         log "output: ${targetdir}/${nm}_${dt}.icc"
+         #log "input : ${targetdir}/${targetprefix}.ti3"
+         #log "output: ${targetdir}/${targetprefix}.icc"
+         if [[ ${last_argyll_rc} -ne 0 ]];then
+            log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
+         fi
+         log "Continue with step 6 after checking for warnings/errors"
+         ;;
+      6)
+         log "----- Start creating gamut plot"
+         edit_params "Provide parameters for iccgamut" "${iccgamut_params_default}"
+         iccgamut_params=${params}
+         do_iccgamut  # > >(tee -a ${logfn}) 2>&1     # process substitution
+         #log "input  : ${targetdir}/${targetprefix}.icc"
+         #log "output1: ${targetdir}/${targetprefix}.gam"
+         #log "output2: ${targetdir}/${targetprefix}.x3d.html"
+         if [[ ${last_argyll_rc} -ne 0 ]];then
+            log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
+         fi
+         log "Continue with step 7 after checking for warnings/errors"
+         ;;
+      7)
+         log "----- Start comparing with sRGB"
+         edit_params "Provide parameters for viewgam" "${viewgam_params_default}"
+         viewgam_params=${params}
+         do_viewgam  # > >(tee -a ${logfn}) 2>&1     # process substitution
+         #log "input1 : ${base}/ref/sRGB.gam"
+         #log "input2 : ${targetdir}/${targetprefix}.gam"
+         #log "output : ${targetdir}/${targetprefix}_vs_sRGB.x3d.html"
          if [[ ${last_argyll_rc} -ne 0 ]];then
             log "***WARNING*** Argyll rc=${last_argyll_rc}, check for errors ! See also ${logfn}"
          fi
@@ -316,7 +382,8 @@ function do_menu {
 # MAIN
 #############################################################################
 
-# report return status of second last commant in a pipe ( eg dispcal <parms> | tee out )
+# report return status of second last command in a pipe 
+# ( eg "dispcal <parms> | tee out" reports exit status of dispcal in stead of tee )
 set -o pipefail
 
 dt=""
@@ -329,6 +396,8 @@ dispcal_params_default=""
 targen_params_default=""
 dispread_params_default=""
 colprof_params_default=""
+iccgamut_params_default=""
+viewgam_params_default=""
 ccmx_default=""
 
 # actual parameters for argyll commands
@@ -336,6 +405,8 @@ dispcal_params=""
 targen_params=""
 dispread_params=""
 colprof_params=""
+iccgamut_params=""
+viewgam_params=""
 ccmx=""
 
 targetdir_default="" # where all output goes, incl .icc profile
