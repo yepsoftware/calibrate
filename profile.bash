@@ -152,6 +152,9 @@ function do_init {
    # -d3    = video RGB
 
    dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
+   if [[ "${ccmx}" != "" ]];then
+      dispread_params_default="-X${ccmx} ${dispread_params_default}"
+   fi
    # -v      = verbose
    # -y1     = LCD IPS panel
    # -d1     = display 1
