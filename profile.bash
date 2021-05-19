@@ -169,7 +169,7 @@ function do_init {
    # -w    = emit VRML .wrl file as well as CGATS .gam file
    # -ir   = intent: p = perceptual, r = relative colorimetric, s = saturation, a = absolute (default), d = profile default
    
-   viewgam_params_default="-cw -t.75 -s ${base}/ref/sRGB.gam -cn -t.25 -s ${targetdir}/${targetprefix}.gam -i ${targetdir}/${targetprefix}_vs_sRGBA"
+   viewgam_params_default="-cw -t.75 -s ${base}/ref/sRGB.gam -cn -t.25 -s ${targetdir}/${targetprefix}.gam -i ${targetdir}/${targetprefix}_vs_sRGB"
    # -cw/n = color of surface (red, green, bue, cyan, magenta, yellow, white, natural color)
    # -t.x  = transparentie
    # -s    = solid vs wired frame
