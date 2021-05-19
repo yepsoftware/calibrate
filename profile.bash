@@ -151,8 +151,9 @@ function do_init {
    # -g16   = steps (not sure what that means)
    # -d3    = video RGB
 
-   dispread_params_default="-v -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
+   dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
    # -v      = verbose
+   # -y1     = LCD IPS panel
    # -d1     = display 1
    # -H      = use high resolution spectrum mode (if available)
    # -k <fn> = calibration file; output from calibration step
@@ -168,7 +169,7 @@ function do_init {
    # -w    = emit VRML .wrl file as well as CGATS .gam file
    # -ir   = intent: p = perceptual, r = relative colorimetric, s = saturation, a = absolute (default), d = profile default
    
-   viewgam_params_default="-cw -t.75 -s ${base}/ref/sRGB.gam -cn -t.25 -s ${targetdir}/${targetprefix}.gam -i ${targetdir}/${targetprefix}/${targetprefix}_vs_sRGBA"
+   viewgam_params_default="-cw -t.75 -s ${base}/ref/sRGB.gam -cn -t.25 -s ${targetdir}/${targetprefix}.gam -i ${targetdir}/${targetprefix}_vs_sRGBA"
    # -cw/n = color of surface (red, green, bue, cyan, magenta, yellow, white, natural color)
    # -t.x  = transparentie
    # -s    = solid vs wired frame
