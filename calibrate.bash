@@ -2,14 +2,6 @@
 
 
 #############################################################################
-function pressEnter {
-#############################################################################
-   echo ""
-   echo -n "Press enter to continue ..."
-   read X
-}
-
-#############################################################################
 function log {
 #############################################################################
    if [[ "${logfn}" != "" ]] && [[ -f "${logfn}" ]];then
@@ -37,10 +29,9 @@ function edit_params {
    fi
 }
 
-
-
 #############################################################################
 function ask {
+#############################################################################
 # $1: prompt
 # $2: default value to return
    echo "---"
@@ -52,7 +43,6 @@ function ask {
       params=$2
    fi
 }
-#############################################################################
 
 #############################################################################
 function do_init {
@@ -90,6 +80,10 @@ function do_init {
 
    # ask for color correction matrix
    ccmx_default=${base}/color_correction_matrix/$(readlink ${base}/color_correction_matrix/default)
+   if [[ $? -ne 0 ]];then
+      # means there is no symbolic link 'default' in ${base}/color_correction_matrix
+      ccmx_default="none"
+   fi
    ccmx=""
    echo ""
    echo "Color Correction Matrix for 'screen/measuring device'."
@@ -100,18 +94,24 @@ function do_init {
    echo "If you do not find one or do not want to use one, "
    echo "   reply 'none' (without the quotes) to the prompt below."
    echo ""
-   echo "Note: the ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
+   echo "Note: the ccmx filename MUST NOT HAVE spaces/commas/brackets/ampersands in it !!!"
    echo "      rename the file first or create a link if needed !!!"
    echo ""
    ask "Enter filename of the color correction matrix for you 'screen/measuring device' combination" ${ccmx_default}
-   if [[ "${params}" != "none" ]];then
+   case "${params}" in
+   "" | "none")
+      ccmx=""
+      ;;
+   *)
       # check if ccmx file exists
       if [[ -f ${params} ]] || [[ -h ${params} ]];then
          ccmx=${params}
       else
          log "***WARNING*** Color correction matrix file [${params}] does not exist, ignoring."
+         ccmx=""
       fi
-   fi
+      ;;
+   esac
 
    # We have enough info now to create directory and start logging
    targetprefix=${nm}_${dt}_${tct}K_${tb}cdm2_${tgamma}
@@ -392,7 +392,6 @@ set -o pipefail
 
 dt=""
 nm="" # name of profile
-dir="" # directory where profile will be saved
 params=""
 
 # default parameters for argyll commands
