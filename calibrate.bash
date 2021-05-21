@@ -89,7 +89,7 @@ function do_init {
    tgamma=${params}
 
    # ask for color correction matrix
-   ccmx_default="${base}/color_correction_matrix/ColorMunki_Display_Eizo_CS270.ccmx"
+   ccmx_default=${base}/color_correction_matrix/$(readlink ${base}/color_correction_matrix/default)
    ccmx=""
    echo ""
    echo "Color Correction Matrix for 'screen/measuring device'."
@@ -103,7 +103,7 @@ function do_init {
    echo "Note: the ccmx file MUST NOT HAVE spaces/commas/brackets/ampersands in the name !!!"
    echo "      rename the file first or create a link if needed !!!"
    echo ""
-   ask "Enter filename of the color correction matrix for you 'measuring device/screen' combination" ${ccmx_default}
+   ask "Enter filename of the color correction matrix for you 'screen/measuring device' combination" ${ccmx_default}
    if [[ "${params}" != "none" ]];then
       # check if ccmx file exists
       if [[ -f ${params} ]] || [[ -h ${params} ]];then
