@@ -97,7 +97,7 @@ function do_init {
    echo "Note: the ccmx filename MUST NOT HAVE spaces/commas/brackets/ampersands in it !!!"
    echo "      rename the file first or create a link if needed !!!"
    echo ""
-   ask "Enter filename of the color correction matrix for you 'screen/measuring device' combination" ${ccmx_default}
+   ask "Enter filename of the color correction matrix for your 'screen/measuring device' combination" ${ccmx_default}
    case "${params}" in
    "" | "none")
       ccmx=""
