@@ -52,7 +52,7 @@ function do_init {
    
    # ask for directory where to store the output files
    params=""
-   outdir_default="/home/pho/Photography/iccProfiles"
+   outdir_default="${HOME}/Documents/iccProfiles"
    ask "Enter output directory" ${outdir_default}
    outdir=${params}
    
