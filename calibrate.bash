@@ -48,7 +48,7 @@ function ask {
 function do_init {
 #############################################################################
    # Date to be used as part of outputfilename:
-   dt=$(date +%Y%m%d_%H%M%S)
+   dt=$(date +%Y-%m-%d_%H:%M)
    
    # ask for directory where to store the output files
    params=""
@@ -77,6 +77,10 @@ function do_init {
    # ask for target gamma
    ask "Enter desired gamma" "2.2"
    tgamma=${params}
+
+   # ask for quality
+   ask "Enter taget quality (l=low, m=medium, h=high)" "m"
+   tq=${params}
 
    # ask for color correction matrix
    ccmx_default=${base}/color_correction_matrix/$(readlink ${base}/color_correction_matrix/default)
@@ -114,7 +118,7 @@ function do_init {
    esac
 
    # We have enough info now to create directory and start logging
-   targetprefix=${nm}_${dt}_${tct}K_${tb}cdm2_${tgamma}
+   targetprefix=${nm}_${dt}_q${tq}_${tb}cdm2_${tct}K_${tgamma}
    if [[ "${ccmx}" != "" ]];then
       targetprefix=${targetprefix}_CCMX
    fi
@@ -124,10 +128,6 @@ function do_init {
    touch ${logfn}
 
    echo "Calibration run of ${dt}" >>${logfn}
-
-   # ask for quality
-   ask "Enter taget quality (l=low, m=medium, h=high)" "m"
-   tq=${params}
 
    # set default params
 
