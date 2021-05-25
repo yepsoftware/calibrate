@@ -48,7 +48,7 @@ function ask {
 function do_init {
 #############################################################################
    # Date to be used as part of outputfilename:
-   dt=$(date +%Y-%m-%d_%H:%M)
+   dt=$(date +%Y-%m-%d_%H_%M)
    
    # ask for directory where to store the output files
    params=""
