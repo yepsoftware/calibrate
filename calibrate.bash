@@ -48,7 +48,7 @@ function ask {
 function do_init {
 #############################################################################
    # Date to be used as part of outputfilename:
-   dt=$(date +%Y-%m-%d_%H_%M)
+   dt=$(date +%Y-%m-%d_%H-%M)
    
    # ask for directory where to store the output files
    params=""
@@ -132,7 +132,7 @@ function do_init {
    # set default params
 
    #dispcal_params_default="-v2 -y1 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
-   dispcal_params_default="-v2 -y1 -d${DISPLAY} -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
+   dispcal_params_default="-v2 -y1 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
    if [[ "${ccmx}" != "" ]];then
       dispcal_params_default="-X${ccmx} ${dispcal_params_default}"
    fi
@@ -153,7 +153,7 @@ function do_init {
    # -d3    = video RGB
 
    #dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
-   dispread_params_default="-v -y1 -d${DISPLAY} -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
+   dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
    if [[ "${ccmx}" != "" ]];then
       dispread_params_default="-X${ccmx} ${dispread_params_default}"
    fi

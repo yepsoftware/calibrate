@@ -30,3 +30,4 @@ After activating the new profile (Settings -> Color), it is recommended to log o
 both colord and the X11_ICC_PROFILE atom set correctly.
 Without logoff/logon, they were not always set correctly ... maybe cashing thing ... maybe there is a command to refresh them, but I do not know which.
 
+The procedure currently only works when you have only one monitor.
