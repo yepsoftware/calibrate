@@ -15,10 +15,22 @@ function log {
 #############################################################################
 function do_import {
 #############################################################################
-   #colormgr import-profile ${profileNm}
-   log "Importing profile ${profileNm} ..."
-   stdbuf -i0 -o0 colormgr import-profile ${profileNm} 2>&1 | tee -a ${logfn}
+   # Before trying to import the profile, first check if the profile is already imported
+
+   colormgr find-profile-by-filename $(basename ${profileNm}) >/dev/null 2>&1
    last_colord_rc=$?
+
+   if [[ ${last_colord_rc} -eq 1 ]];then
+      # rc=1 means profile does not yet exist in colord database, so we can import it
+      log "Importing profile ${profileNm} ..."
+      stdbuf -i0 -o0 colormgr import-profile ${profileNm} 2>&1 | tee -a ${logfn}
+      profile_already_exists=false
+      last_colord_rc=$?
+   else
+      log "Profile already exists ... skipping import."
+      profile_already_exists=true
+      last_colord_rc=0
+   fi
 
    if [[ ${last_colord_rc} -ne 0 ]];then
       return
@@ -43,7 +55,7 @@ function do_dispwin {
 #############################################################################
 
    #dispwin -v -c -I ${profileNm}
-   log "Updating colot.jcnf file ..."
+   log "Updating color.jcnf file ..."
    stdbuf -i0 -o0 dispwin -v -c -I ${profileNm} 2>&1 | tee -a ${logfn}
    last_colord_rc=$?
 }
@@ -95,6 +107,7 @@ profileId=""
 deviceId=""
 last_colord_rc=0
 last_dispwin_rc=0
+profile_already_exists=false     # true=profile is already in colord db / false=is not yet in colord db
 
 # Check if profile exists
 if [[ ! -f ${profileNm} ]];then
@@ -116,15 +129,22 @@ else
    log "Import OK"
 fi
 
-
-# Do not expect this to work in case there is >1 display
-deviceId=$(colormgr get-devices-by-kind display | grep "^Device ID:" | tr -s " " | cut -f 2 -d ":" | sed -e 's/^ //')
-do_add_profile
-if [[ ${last_colord_rc} -ne 0 ]];then
-   log "***ERROR*** Assigning profile tp device failed. profileId=${profileId}, DeviceId=${deviceId}"
-   exit 1
+if [[ ${profile_already_exists} = true ]];then
+   # If the profile already existed in the colord db, then assume it is already assigned to a device and skip this step.
+   log "Skipping assigning profile to device"
+   log "Since the profile was already in the colord db, it is assumed it is also already assinged to the proper device."
 else
-   log "Profile assigned to device: OK"
+   # Assign new profile to display device.
+   # Do not expect this to work in case there is >1 display.
+   deviceId=$(colormgr get-devices-by-kind display | grep "^Device ID:" | tr -s " " | cut -f 2 -d ":" | sed -e 's/^ //')
+   do_add_profile
+   if [[ ${last_colord_rc} -ne 0 ]];then
+      log "***ERROR*** Assigning profile to device failed. profileId=${profileId}, DeviceId=${deviceId}"
+      exit 1
+   else
+      log "Profile assigned to device: OK"
+   fi
+
 fi
 
 # Update $HOME/.config/color.jcnf file
