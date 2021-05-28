@@ -131,7 +131,8 @@ function do_init {
 
    # set default params
 
-   dispcal_params_default="-v2 -y1 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
+   #dispcal_params_default="-v2 -y1 -d1 -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
+   dispcal_params_default="-v2 -y1 -d${DISPLAY} -q${tq} -t${tct} -b${tb} -g${tgamma} -k0 ${targetdir}/${targetprefix}"
    if [[ "${ccmx}" != "" ]];then
       dispcal_params_default="-X${ccmx} ${dispcal_params_default}"
    fi
@@ -151,7 +152,8 @@ function do_init {
    # -g16   = steps (not sure what that means)
    # -d3    = video RGB
 
-   dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
+   #dispread_params_default="-v -y1 -d1 -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
+   dispread_params_default="-v -y1 -d${DISPLAY} -k ${targetdir}/${targetprefix}.cal ${targetdir}/${targetprefix}"
    if [[ "${ccmx}" != "" ]];then
       dispread_params_default="-X${ccmx} ${dispread_params_default}"
    fi
