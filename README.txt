@@ -14,7 +14,7 @@ There are 3 scripts:
 
 1) calibrate : to create a icc profile for your display.
 2) install_profile: to install the profile created in 1).
-3) chack_profile: to check if the profile is properly installed.
+3) check_profile: to check if the profile is properly installed.
 
 1) C A L I B R A T E
 --------------------
@@ -51,13 +51,19 @@ Without logoff/logon, they were not always set correctly ... maybe cashing thing
 
 The procedure currently only works when you have only one display.
 
+Note that this procedure installs the profile only for the current user.
+Use GNOME Settings => Color to install it for all users.
+
 3) C H E C K
 ------------
-The ./chec_profile script in thsi project displays 
+The ./check_profile script in this project displays :
  a) the colord datbase
  b) the color.jcnf file (if it exists)
  c) the X11 _ICC_PROFILE atom (only first 14 bytes)
  d) the first 16 bytes of the profile as known to colord
 
+As last step it asks if you want a report on the display status.
+Note that you need a measuring device to run this last step !
+It reports on the white level, gamma and color temperature.
 
 #EOF
