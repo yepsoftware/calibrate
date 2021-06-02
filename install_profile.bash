@@ -61,34 +61,6 @@ function do_dispwin {
 }
 
 #############################################################################
-function do_check {
-#############################################################################
-
-   log ""
-   log "----- get-devices -------------------------"
-   log ""
-   stdbuf -i0 -o0 colormgr get-devices 2>&1 | tee -a ${logfn}
-
-   log ""
-   log "----- _ICC_PROFILE ------------------------"
-   log ""
-   # xprop -display :1 -len 14 -root _ICC_PROFILE
-   stdbuf -i0 -o0 xprop -display ${DISPLAY} -len 14 -root _ICC_PROFILE 2>&1 | tee -a ${logfn}
-
-   log ""
-   log "----- color.jcnf --------------------------"
-   log ""
-   stdbuf -i0 -o0 cat  ~/.config/color.jcnf 2>&1 | tee -a ${logfn}
-
-   log ""
-   log "----- profile hex dump --------------------"
-   log ""
-   stdbuf -i0 -o0 hexdump ${profileNm} | head -n 1 2>&1 | tee -a ${logfn}
-
-   log ""
-
-}
-#############################################################################
 # MAIN
 #############################################################################
 
@@ -149,11 +121,6 @@ fi
 
 # Update $HOME/.config/color.jcnf file
 do_dispwin
-
-log "#######################################"
-log "#### Checking profile installation ####"
-log "#######################################"
-do_check
 
 log ""
 log "Done."
