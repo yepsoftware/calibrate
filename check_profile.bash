@@ -13,6 +13,22 @@ function log {
 }
 
 #############################################################################
+function edit_params {
+#############################################################################
+# $1: Text
+# $2: Default parameters
+   echo ""
+   echo "$1"
+   echo "Default parameters are:"
+   echo "$2"
+   echo "Your edits or hit enter to accept default:"
+   read params
+   if [[ "${params}" = "" ]];then
+      params=$2
+   fi
+}
+
+#############################################################################
 function do_check {
 #############################################################################
 
@@ -40,6 +56,20 @@ function do_check {
    log ""
    hexdump ${profileNm} | head -n 1
 
+   log ""
+   log "----- reporting on display status ---------"
+   log ""
+   echo "Do you want to report on the display status ?"
+   echo "A measuring device is needed for this!"
+   echo -n "Run report y/N ? "
+   read answer
+   if [[ "$answer" = "y" ]];then
+      dispcal_params_default="-y1 -d1 -r"
+      edit_params "Provide parameters for dispcal" "${dispcal_params_default}"
+      dispcal_params=${params}
+      log "RUNNING: dispcal ${dispcal_params}"
+      dispcal ${dispcal_params}
+   fi
    log ""
 
 }
