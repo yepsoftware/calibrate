@@ -264,7 +264,7 @@ function do_menu {
       #clear
       echo ""
       echo "========================="
-      echo "= Calibrate menu - V1.0 ="
+      echo "= Calibrate menu - V2.0 ="
       echo "========================="
       if [[ "${targetdir}" != "" ]];then
          echo "All files will be stored in ${targetdir}"
